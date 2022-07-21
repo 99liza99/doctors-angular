@@ -1,0 +1,22 @@
+.cards {
+    display: flex;
+}
+.cards .people {
+    max-width: 600px;
+    border: 1px solid;
+    padding: 10px;
+    margin: 10px;
+}
+.cards .people img {
+    height: 200px;
+    width: 200px;
+}
+.cards .people p {
+    font-family: cursive;
+    
+}
+.cards .people .name {
+    font-size: 20px;
+}
+
+

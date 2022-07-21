@@ -1,0 +1,12 @@
+<div class="cards">
+  <div class="people" *ngFor="let doctor of doctors">
+    <img src="assets/images/avatar.png" alt="" />
+    <p>{{ doctor.name }}</p>
+    <p>
+        <span>Age</span>&nbsp;
+        <span>{{ doctor.age }}</span>
+    </p>
+    <p>{{ doctor.specialization }}</p>
+    <p>{{ doctor.description }}</p>
+  </div>
+</div>
