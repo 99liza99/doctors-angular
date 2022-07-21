@@ -7,3 +7,7 @@
 .container h2 {
     text-align: center;
 }
+
+button {
+    margin-right: 8px;
+}

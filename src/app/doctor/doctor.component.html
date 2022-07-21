@@ -1,6 +1,6 @@
 <div class="cards">
   <div class="people" *ngFor="let doctor of doctors">
-    <img src="assets/images/avatar.png" alt="" />
+    <img src="{{doctor.img}}" alt="" />
     <p>{{ doctor.name }}</p>
     <p>
         <span>Age</span>&nbsp;
