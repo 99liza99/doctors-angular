@@ -1,0 +1,16 @@
+<form [formGroup]="doctorForm" (ngSubmit)="onSubmit()">
+  <p>Form Status: {{ doctorForm.status }}</p>
+  <label for="name">Name: </label>
+  <input id="name" type="text" formControlName="name" />
+
+  <label for="specialization">Specialization: </label>
+  <input id="specialization" type="text" formControlName="specialization" />
+
+  <label for="description">Description: </label>
+  <input id="description" type="text" formControlName="description" />
+
+  <label for="age">Age: </label>
+  <input id="age" type="text" formControlName="age" />
+
+  <button type="submit" [disabled]="!doctorForm.valid">Save</button>
+</form>

@@ -4,17 +4,18 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialExampleModule } from '../material.module';
 
 import { AppComponent } from './app.component';
-import { DoctorsComponent, DialogCompoent } from './doctors/doctors.component';
+import { DoctorsComponent } from './doctors/doctors.component';
 import { DoctorComponent } from './doctor/doctor.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatNativeDateModule } from '@angular/material/core';
+import { DialogComponent } from './dialog/dialog.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     DoctorsComponent,
     DoctorComponent,
-    DialogCompoent,
+    DialogComponent
   ],
   imports: [
     BrowserModule,

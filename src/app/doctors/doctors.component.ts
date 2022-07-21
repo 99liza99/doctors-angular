@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { MatDialog, MatDialogRef } from '@angular/material/dialog';
+import { MatDialog } from '@angular/material/dialog';
+import { DialogComponent } from '../dialog/dialog.component';
 
 @Component({
   selector: 'app-doctors',
@@ -17,18 +18,10 @@ export class DoctorsComponent implements OnInit {
     enterAnimationDuration: string,
     exitAnimationDuration: string
   ): void {
-    this.dialog.open(DialogCompoent, {
+    this.dialog.open(DialogComponent, {
       width: '250px',
       enterAnimationDuration,
       exitAnimationDuration,
     });
   }
-}
-
-@Component({
-  selector: 'app-dialog',
-  templateUrl: './dialog.component.html',
-})
-export class DialogCompoent {
-  constructor(public dialogRef: MatDialogRef<DialogCompoent>) {}
 }
