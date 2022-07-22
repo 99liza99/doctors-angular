@@ -10,16 +10,18 @@ import { Validators } from '@angular/forms';
 })
 export class DialogComponent {
   doctorForm = this.fb.group({
-    name: ['', Validators.required],
+    name: ['', [Validators.required, Validators.pattern('[A-Z][a-z ]*')]],
     specialization: ['', Validators.required],
     description: ['', Validators.required],
-    age: ['', Validators.required],
+    age: ['',Validators.required],
   });
+  
 
   constructor(public dialogRef: MatDialogRef<DialogComponent>, private fb: FormBuilder) {}
 
   onSubmit() {
     console.log(this.doctorForm.value);
   }
+  
   
 }

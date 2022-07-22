@@ -3,8 +3,8 @@ import { Doctor } from "./doctors";
 export const DOCTORS: Doctor[] = [
   {
     id: 1,
-    img: 'assets/images/avatar.png',
-    name: 'Oliver Martin',
+    img: 'assets/images/d1.jpg',
+    name: 'Sahra Martin',
     specialization: 'Gastroenterologist',
     age: 25,
     description:
@@ -12,8 +12,8 @@ export const DOCTORS: Doctor[] = [
   },
   {
     id: 2,
-    img: 'assets/images/avatar.png',
-    name: 'William Davis',
+    img: 'assets/images/d2.webp',
+    name: 'Hanna Davis',
     specialization: 'Pediatrician',
     age: 30,
     description:
@@ -21,19 +21,19 @@ export const DOCTORS: Doctor[] = [
   },
   {
     id: 3,
-    img: 'assets/images/avatar.png',
-    name: 'James Peters',
+    img: 'assets/images/d3.webp',
+    name: 'Juhlia Peters',
     specialization: 'Therapist',
-    age: 45,
+    age: 23,
     description:
       'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ratione sint consequuntur velit amet, laborum repellendus hic eaque ducimus numquam odit ipsum, obcaecati inventore consectetur quo temporibus eius voluptate distinctio tempora.',
   },
   {
     id: 4,
-    img: 'assets/images/avatar.png',
+    img: 'assets/images/d4.jpg',
     name: 'Riley Gibson',
     specialization: 'Dentist',
-    age: 43,
+    age: 53,
     description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque, hic. Dicta quas, officia nostrum temporibus quibusdam deserunt ut laboriosam rerum perferendis commodi velit quaerat, nesciunt, pariatur maiores cupiditate qui excepturi.',
   },
 ];

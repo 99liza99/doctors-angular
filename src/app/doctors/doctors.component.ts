@@ -8,7 +8,7 @@ import { DialogComponent } from '../dialog/dialog.component';
   styleUrls: ['./doctors.component.css'],
 })
 export class DoctorsComponent implements OnInit {
-  title: string = 'List Doctors';
+  title: string = 'List of Doctors';
 
   constructor(public dialog: MatDialog) {}
 

@@ -1,16 +1,22 @@
 <form [formGroup]="doctorForm" (ngSubmit)="onSubmit()">
   <p>Form Status: {{ doctorForm.status }}</p>
-  <label for="name">Name: </label>
-  <input id="name" type="text" formControlName="name" />
+  
+    <label for="name">Name: </label>
+    <p><input id="name"  pattern="[a-zA-Z ]*"  type="text"  formControlName="name" /></p>
+    
 
-  <label for="specialization">Specialization: </label>
-  <input id="specialization" type="text" formControlName="specialization" />
+    <label for="specialization">Specialization: </label>
+    <p><input id="specialization" type="text" formControlName="specialization" /></p>
 
-  <label for="description">Description: </label>
-  <input id="description" type="text" formControlName="description" />
+    <label for="description">Description: </label>
+    <p><input id="description" type="text" formControlName="description" /></p>
 
-  <label for="age">Age: </label>
-  <input id="age" type="text" formControlName="age" />
+    <div class="age"><label for="age">Age: </label>
+    <p><input id="age" type="number" min="10" max="100" formControlName="age" /></p>
+  </div>
+  
+ 
 
   <button type="submit" [disabled]="!doctorForm.valid">Save</button>
 </form>
+

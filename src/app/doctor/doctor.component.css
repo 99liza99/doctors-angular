@@ -1,22 +1,26 @@
-.cards {
-    display: flex;
-}
-.cards .people {
-    max-width: 600px;
-    border: 1px solid;
-    padding: 10px;
-    margin: 10px;
-}
-.cards .people img {
-    height: 200px;
-    width: 200px;
-}
-.cards .people p {
-    font-family: cursive;
+.card {
+    flex-basis: 30%;
     
 }
-.cards .people .name {
-    font-size: 20px;
+.card img {
+    width: 200px;
+    margin: auto;
+    padding: 15px;
 }
-
-
+.card:hover {
+    transform: scale(1.05, 1.05);
+    transition: 0.3s
+}
+.card p {
+    color: #474444;
+    padding: 10px;
+}
+.card .name {
+    font-weight: bold;
+    color: #474444;
+}
+.cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
