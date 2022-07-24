@@ -1,5 +1,7 @@
 .card {
     flex-basis: 30%;
+    cursor: pointer;
+    margin-bottom: 20px;
     
 }
 .card img {
