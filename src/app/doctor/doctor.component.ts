@@ -18,7 +18,7 @@ export class DoctorComponent implements OnInit {
   ngOnInit(): void {}
 
   addItem(newItem: Doctor) {
-    const spec = SPECIALIZAIONS.find((h) => h.id === Number(newItem.specialization))!;
+    const spec = SPECIALIZAIONS.find((elemet) => elemet.id === Number(newItem.specialization))!;
     newItem.img = 'assets/images/d1.jpg';
     newItem.id = this.doctors.length + 1;
     newItem.specialization = spec.value;

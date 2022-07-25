@@ -1,0 +1,30 @@
+<form [formGroup]="doctorForm" (ngSubmit)="onSubmit(doctorForm)" class="doctor_form">
+    <p>Form Status: {{ doctorForm.status }}</p>
+    
+      <mat-form-field class="example-full-width" appearance="fill">
+        <mat-label>Name</mat-label>
+        <input type="text" pattern="[a-zA-Z ]*" matInput formControlName="name">
+      </mat-form-field>
+      
+      <mat-form-field class="example-full-width" appearance="fill">
+        <mat-label>Specialization</mat-label>
+        <mat-select formControlName="specialization">
+          <mat-option *ngFor="let spec of specialization" [value]="spec.id">
+            {{spec.value}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+  
+      <mat-form-field class="example-full-width" appearance="fill">
+        <mat-label>Description</mat-label>
+        <textarea id="description" matInput formControlName="description" name="" id="" cols="30" rows="10"></textarea>
+      </mat-form-field>
+  
+      <mat-form-field class="example-full-width" appearance="fill">
+        <mat-label>Age</mat-label>
+        <input id="age" type="number" min="10" matInput max="100" formControlName="age" />
+      </mat-form-field>
+  
+      <button type="submit" [disabled]="!doctorForm.valid" [mat-dialog-close]="doctorForm" (click)="addNewItem(doctorForm)">Save</button>
+  </form>
+  
