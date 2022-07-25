@@ -4,11 +4,11 @@
 <div class="cards">
   <mat-card class="card" *ngFor="let doctor of doctors">
     <mat-card-title-group>
-      <mat-card-title
-        ><a routerLink="/detail/{{ doctor.id }}">{{
-          doctor.name
-        }}</a></mat-card-title
-      >
+      <mat-card-title>
+        <a routerLink="/detail/{{ doctor.id }}">
+          {{doctor.name}}
+        </a>
+      </mat-card-title>
       <mat-card-subtitle>{{ doctor.specialization }}</mat-card-subtitle>
       <img mat-card-sm-image src="{{ doctor.img }}" />
     </mat-card-title-group>

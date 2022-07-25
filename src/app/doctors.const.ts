@@ -52,4 +52,8 @@ export const SPECIALIZAIONS: Specialization[] = [
     id: 3,
     value: 'Surgeon',
   },
+  {
+    id: 4,
+    value: "Dentist"
+  }
 ];
