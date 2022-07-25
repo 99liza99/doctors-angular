@@ -1,4 +1,4 @@
-<form [formGroup]="doctorForm" (ngSubmit)="onSubmit()">
+<form [formGroup]="doctorForm" (ngSubmit)="onSubmit(doctorForm)">
   <p>Form Status: {{ doctorForm.status }}</p>
   
     <mat-form-field class="example-full-width" appearance="fill">
@@ -6,17 +6,14 @@
       <input type="text" pattern="[a-zA-Z ]*" matInput formControlName="name">
     </mat-form-field>
     
-    <p>
-      <mat-form-field class="example-full-width" appearance="fill">
-        <mat-label>Specialization</mat-label>
-        <mat-select formControlName="specialization">
-          <mat-option *ngFor="let spec of specialization" [value]="spec.id">
-            {{spec.value}}
-          </mat-option>
-        </mat-select>
-      </mat-form-field>
-    </p>
-
+    <mat-form-field class="example-full-width" appearance="fill">
+      <mat-label>Specialization</mat-label>
+      <mat-select formControlName="specialization">
+        <mat-option *ngFor="let spec of specialization" [value]="spec.id">
+          {{spec.value}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
 
     <mat-form-field class="example-full-width" appearance="fill">
       <mat-label>Description</mat-label>
@@ -28,6 +25,5 @@
       <input id="age" type="number" min="10" matInput max="100" formControlName="age" />
     </mat-form-field>
 
-    <button type="submit" [disabled]="!doctorForm.valid">Save</button>
+    <button type="submit" [disabled]="!doctorForm.valid" [mat-dialog-close]="doctorForm">Save</button>
 </form>
-

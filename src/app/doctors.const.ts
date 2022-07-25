@@ -42,15 +42,15 @@ export const DOCTORS: Doctor[] = [
 export const SPECIALIZAIONS: Specialization[] = [
   {
     id: 1,
-    value: 'Therapist',
+    value: 'Gastroenterologist',
   },
   {
     id: 2,
-    value: 'Traumatologist',
+    value: 'Pediatrician',
   },
   {
     id: 3,
-    value: 'Surgeon',
+    value: 'Therapist',
   },
   {
     id: 4,

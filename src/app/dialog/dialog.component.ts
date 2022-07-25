@@ -1,9 +1,10 @@
-import { Component, OnInit } from '@angular/core';
-import { MatDialogRef } from '@angular/material/dialog';
-import { FormBuilder } from '@angular/forms';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { MatDialog, MatDialogRef,MAT_DIALOG_DATA} from '@angular/material/dialog';
+import { FormBuilder, FormGroup } from '@angular/forms';
 import { Validators } from '@angular/forms';
 import { Specialization } from '../doctors';
 import { SPECIALIZAIONS } from '../doctors.const';
+
 
 @Component({
   selector: 'app-dialog',
@@ -17,15 +18,21 @@ export class DialogComponent {
     description: ['', Validators.required],
     age: ['', Validators.required],
   });
-
+  
   specialization: Specialization[] = SPECIALIZAIONS;
 
   constructor(
     public dialogRef: MatDialogRef<DialogComponent>,
-    private fb: FormBuilder
+    private fb: FormBuilder,
+    public dialog: MatDialog
   ) {}
 
-  onSubmit() {
-    console.log(this.doctorForm.value);
+  onSubmit(form: FormGroup) {
+    // if (form.valid) {
+    //   this.dialogRef.close(form.value)
+    //   // this.newItemEvent.emit(form.value);
+    // }
+
+    // form.reset();
   }
 }
