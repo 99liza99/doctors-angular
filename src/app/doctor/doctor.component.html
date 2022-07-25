@@ -1,23 +1,21 @@
-
-<div class="cards">
-<mat-card class="card" *ngFor="let doctor of doctors">
-  <mat-card-header>
-    <div mat-card-avatar class="example-header-image"></div>
-    <mat-card-title class="name">{{ doctor.name }}</mat-card-title>
-    <mat-card-subtitle class="spec">{{ doctor.specialization }}</mat-card-subtitle>
-  </mat-card-header>
-  <img mat-card-image src="{{doctor.img}}" alt="Photo of a Shiba Inu">
-  <mat-card-content>
-    <p>
-      {{ doctor.description }}
-    </p>
-  </mat-card-content>
-  <mat-card-actions>
-    <button mat-button><i class="fa-solid fa-heart"></i></button>
-    <button mat-button><i class="fa-solid fa-share"></i></button>
-  </mat-card-actions>
-</mat-card>
+<div class="container">
+  <button mat-raised-button (click)="openDialog('0ms', '0ms')">Open dialog</button>
 </div>
-
-
-
+<div class="cards">
+  <mat-card class="card" *ngFor="let doctor of doctors">
+    <mat-card-title-group>
+      <mat-card-title
+        ><a routerLink="/detail/{{ doctor.id }}">{{
+          doctor.name
+        }}</a></mat-card-title
+      >
+      <mat-card-subtitle>{{ doctor.specialization }}</mat-card-subtitle>
+      <img mat-card-sm-image src="{{ doctor.img }}" />
+    </mat-card-title-group>
+    <mat-card-content>
+      <p>
+        {{ doctor.description }}
+      </p>
+    </mat-card-content>
+  </mat-card>
+</div>

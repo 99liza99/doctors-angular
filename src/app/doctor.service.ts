@@ -4,15 +4,18 @@ import { DOCTORS } from './doctors.const';
 import { Observable, of } from 'rxjs';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class DoctorService {
-
-  constructor() { }
+  constructor() {}
 
   getDoctors(): Observable<Doctor[]> {
     const doctors = of(DOCTORS);
     return doctors;
   }
 
+  getDoctor(id: number): Observable<Doctor> {
+    const hero = DOCTORS.find((h) => h.id === id)!;
+    return of(hero);
+  }
 }
