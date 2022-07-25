@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { MatDialogRef } from '@angular/material/dialog';
 import { FormBuilder } from '@angular/forms';
 import { Validators } from '@angular/forms';
+import { Specialization } from '../doctors';
+import { SPECIALIZAIONS } from '../doctors.const';
 
 @Component({
   selector: 'app-dialog',
@@ -13,15 +15,17 @@ export class DialogComponent {
     name: ['', [Validators.required, Validators.pattern('[A-Z][a-z ]*')]],
     specialization: ['', Validators.required],
     description: ['', Validators.required],
-    age: ['',Validators.required],
+    age: ['', Validators.required],
   });
-  
 
-  constructor(public dialogRef: MatDialogRef<DialogComponent>, private fb: FormBuilder) {}
+  specialization: Specialization[] = SPECIALIZAIONS;
+
+  constructor(
+    public dialogRef: MatDialogRef<DialogComponent>,
+    private fb: FormBuilder
+  ) {}
 
   onSubmit() {
     console.log(this.doctorForm.value);
   }
-  
-  
 }

@@ -1,4 +1,4 @@
-input, textarea {
+input, textarea, select, mat-form-field{
     width: 100%;
     box-sizing: border-box;
 }

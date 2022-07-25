@@ -1,4 +1,4 @@
-import { Doctor } from "./doctors";
+import { Doctor, Specialization } from './doctors';
 
 export const DOCTORS: Doctor[] = [
   {
@@ -34,6 +34,22 @@ export const DOCTORS: Doctor[] = [
     name: 'Riley Gibson',
     specialization: 'Dentist',
     age: 53,
-    description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque, hic. Dicta quas, officia nostrum temporibus quibusdam deserunt ut laboriosam rerum perferendis commodi velit quaerat, nesciunt, pariatur maiores cupiditate qui excepturi.',
+    description:
+      'Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque, hic. Dicta quas, officia nostrum temporibus quibusdam deserunt ut laboriosam rerum perferendis commodi velit quaerat, nesciunt, pariatur maiores cupiditate qui excepturi.',
+  },
+];
+
+export const SPECIALIZAIONS: Specialization[] = [
+  {
+    id: 1,
+    value: 'Therapist',
+  },
+  {
+    id: 2,
+    value: 'Traumatologist',
+  },
+  {
+    id: 3,
+    value: 'Surgeon',
   },
 ];

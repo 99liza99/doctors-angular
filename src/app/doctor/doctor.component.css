@@ -1,35 +1,36 @@
 .cards {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
 }
 
 .cards .card {
-    flex-basis: 30%;
-    cursor: pointer;
-    margin-bottom: 20px;
-    
+  flex-basis: 30%;
+  cursor: pointer;
+  margin-bottom: 20px;
 }
-.card img {
-    height: 150px;
-    width: auto;
-} 
+
+.cards .card a {
+  text-decoration: none;
+  color: blueviolet;
+}
+
 .card:hover {
-    transform: scale(1.05, 1.05);
-    transition: 0.3s
+  transform: scale(1.05, 1.05);
+  transition: 0.3s;
 }
 .card p {
-    color: #474444;
-    padding: 10px;
+  color: #474444;
+  padding: 10px;
 }
 .card .name {
-    font-weight: bold;
-    color: #474444;
+  font-weight: bold;
+  color: #474444;
 }
 
 button {
-    margin-left: auto;
-    margin-right: 0;
-    display: block;
-    margin-bottom: 10px;
+  margin-left: auto;
+  margin-right: 0;
+  display: block;
+  margin-bottom: 10px;
 }
