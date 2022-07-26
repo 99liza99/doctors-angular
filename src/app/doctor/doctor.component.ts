@@ -13,6 +13,8 @@ import { DoctorService } from '../doctor.service';
   providers: [DoctorService],
 })
 export class DoctorComponent implements OnInit {
+  selectedDoctor?: Doctor;
+
   doctors: Doctor[] = DOCTORS;
 
   constructor(public dialog: MatDialog, private doctorService: DoctorService) {
@@ -23,8 +25,14 @@ export class DoctorComponent implements OnInit {
   }
 
   ngOnInit(): void {
+
+    this.getDoctors();
 //     this.doctorService.doctorsSource$.subscribe((doctors) => {
 // this.doctors = doctors    });
+  }
+   getDoctors(): void {
+    this.doctorService.getDoctors()
+         .subscribe(doctors => this.doctors = doctors);
   }
 
   addItem(newItem: Doctor) {

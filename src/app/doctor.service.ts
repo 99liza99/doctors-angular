@@ -1,17 +1,21 @@
 import { Injectable } from '@angular/core';
+import { Observable, of } from 'rxjs';
 import { Doctor } from './doctors';
 import { DOCTORS } from './doctors.const';
-import { Observable, of } from 'rxjs';
-
 
 @Injectable({
   providedIn: 'root',
 })
 export class DoctorService {
-  doctors: Doctor[] = [];
+  constructor() {}
 
-  constructor() { }
+  getDoctor(id: number): Observable<Doctor> {
+    const doctor = DOCTORS.find((h) => h.id === id)!;
+    return of(doctor);
+  }
 
-
+  getDoctors(): Observable<Doctor[]> {
+    const doctors = of(DOCTORS);
+    return doctors;
+  }
 }
-
