@@ -1,3 +1,6 @@
 nav {
     margin-bottom: 25px;
 }
+nav ul li a {
+list-style-type: none;
+}
