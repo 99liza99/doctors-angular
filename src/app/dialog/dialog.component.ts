@@ -14,4 +14,8 @@ export class DialogComponent {
     public dialogRef: MatDialogRef<DialogComponent>,
     public dialog: MatDialog
   ) {}
+
+  addItem(event: any) {
+    this.dialogRef.close(event)
+  }
 }

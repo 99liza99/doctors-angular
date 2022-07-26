@@ -26,13 +26,9 @@ export class ModalFormComponent implements OnInit {
   ngOnInit(): void {}
 
   onSubmit(form: FormGroup) {
-    // if (form.valid) {
-    //   // this.newItemEvent.emit(form.value);
-    // }
-    // form.reset();
-  }
-  addNewItem(form: FormGroup) {
+    console.log(form.value);
+    
     this.newItemEvent.emit(form.value);
-    this.doctorService.doctorSave(form.value);
+    
   }
 }

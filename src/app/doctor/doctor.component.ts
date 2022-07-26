@@ -14,24 +14,29 @@ import { DoctorService } from '../doctor.service';
 })
 export class DoctorComponent implements OnInit {
   doctors: Doctor[] = DOCTORS;
-  
-  constructor(public dialog: MatDialog, private doctorService : DoctorService) {
-    doctorService.doctorsSource$.subscribe(
-      doctor => {
-        this.addItem(doctor);
-      });
-  }
- 
 
-  ngOnInit(): void {}
+  constructor(public dialog: MatDialog, private doctorService: DoctorService) {
+    // doctorService.doctorsSource$.subscribe(
+    //   doctor => {
+    //     this.addItem(doctor);
+    //   });
+  }
+
+  ngOnInit(): void {
+//     this.doctorService.doctorsSource$.subscribe((doctors) => {
+// this.doctors = doctors    });
+  }
 
   addItem(newItem: Doctor) {
-    const spec = SPECIALIZAIONS.find((elemet) => elemet.id === Number(newItem.specialization))!;
+    const spec = SPECIALIZAIONS.find(
+      (elemet) => elemet.id === Number(newItem.specialization)
+    )!;
     newItem.img = 'assets/images/d1.jpg';
     newItem.id = this.doctors.length + 1;
     newItem.specialization = spec.value;
 
     this.doctors.push(newItem);
+    // this.doctorService.doctorSave(newItem);
   }
 
   openDialog(
@@ -51,7 +56,7 @@ export class DoctorComponent implements OnInit {
       )
       .subscribe((result) => {
         console.log('The dialog was closed', result);
-        this.addItem(result.value);
+        this.addItem(result);
       });
   }
 }
