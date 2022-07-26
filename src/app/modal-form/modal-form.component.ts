@@ -27,8 +27,6 @@ export class ModalFormComponent implements OnInit {
 
   onSubmit(form: FormGroup) {
     console.log(form.value);
-    
     this.newItemEvent.emit(form.value);
-    
   }
 }

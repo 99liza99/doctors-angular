@@ -15,7 +15,7 @@ export class DoctorService {
   }
 
   getDoctors(): Observable<Doctor[]> {
-    const doctors = of(DOCTORS);
-    return doctors;
+    return of(DOCTORS);
   }
+  
 }

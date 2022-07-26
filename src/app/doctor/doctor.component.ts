@@ -10,29 +10,21 @@ import { DoctorService } from '../doctor.service';
   selector: 'app-doctor',
   templateUrl: './doctor.component.html',
   styleUrls: ['./doctor.component.css'],
-  providers: [DoctorService],
 })
 export class DoctorComponent implements OnInit {
-  selectedDoctor?: Doctor;
-
-  doctors: Doctor[] = DOCTORS;
+  doctors: Doctor[] = [];
 
   constructor(public dialog: MatDialog, private doctorService: DoctorService) {
-    // doctorService.doctorsSource$.subscribe(
-    //   doctor => {
-    //     this.addItem(doctor);
-    //   });
+    
   }
 
   ngOnInit(): void {
-
     this.getDoctors();
-//     this.doctorService.doctorsSource$.subscribe((doctors) => {
-// this.doctors = doctors    });
   }
-   getDoctors(): void {
-    this.doctorService.getDoctors()
-         .subscribe(doctors => this.doctors = doctors);
+  getDoctors(): void {
+    this.doctorService
+      .getDoctors()
+      .subscribe((doctors) => (this.doctors = doctors));
   }
 
   addItem(newItem: Doctor) {
