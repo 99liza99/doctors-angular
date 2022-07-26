@@ -3,6 +3,7 @@ import { Validators } from '@angular/forms';
 import { Doctor, Specialization } from '../doctors';
 import { SPECIALIZAIONS } from '../doctors.const';
 import { FormBuilder, FormGroup } from '@angular/forms';
+import { DoctorService } from '../doctor.service';
 
 @Component({
   selector: 'app-modal-form',
@@ -19,18 +20,19 @@ export class ModalFormComponent implements OnInit {
 
   specialization: Specialization[] = SPECIALIZAIONS;
   @Output() newItemEvent = new EventEmitter<Doctor>();
-  constructor(private fb: FormBuilder) {}
+
+  constructor(private fb: FormBuilder, private doctorService: DoctorService) {}
 
   ngOnInit(): void {}
 
   onSubmit(form: FormGroup) {
     // if (form.valid) {
-    //   this.dialogRef.close(form.value)
     //   // this.newItemEvent.emit(form.value);
     // }
     // form.reset();
   }
   addNewItem(form: FormGroup) {
     this.newItemEvent.emit(form.value);
+    this.doctorService.doctorSave(form.value);
   }
 }

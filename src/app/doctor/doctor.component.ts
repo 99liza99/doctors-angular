@@ -4,16 +4,24 @@ import { DialogComponent } from '../dialog/dialog.component';
 import { Doctor } from '../doctors';
 import { DOCTORS, SPECIALIZAIONS } from '../doctors.const';
 import { first, filter } from 'rxjs/operators';
+import { DoctorService } from '../doctor.service';
 
 @Component({
   selector: 'app-doctor',
   templateUrl: './doctor.component.html',
   styleUrls: ['./doctor.component.css'],
+  providers: [DoctorService],
 })
 export class DoctorComponent implements OnInit {
   doctors: Doctor[] = DOCTORS;
-
-  constructor(public dialog: MatDialog) {}
+  
+  constructor(public dialog: MatDialog, private doctorService : DoctorService) {
+    doctorService.doctorsSource$.subscribe(
+      doctor => {
+        this.addItem(doctor);
+      });
+  }
+ 
 
   ngOnInit(): void {}
 
