@@ -9,11 +9,6 @@ import { DOCTORS } from './doctors.const';
 export class DoctorService {
   constructor() {}
 
-  getDoctor(id: number): Observable<Doctor> {
-    const doctor = DOCTORS.find((h) => h.id === id)!;
-    return of(doctor);
-  }
-
   getDoctors(): Observable<Doctor[]> {
     return of(DOCTORS);
   }

@@ -8,7 +8,6 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatNativeDateModule } from '@angular/material/core';
 import { DialogComponent } from './dialog/dialog.component';
 import { AppRoutingModule } from './app-routing.module';
-import { DoctorDetailComponent } from './doctor-detail/doctor-detail.component';
 import { ModalFormComponent } from './modal-form/modal-form.component';
 
 @NgModule({
@@ -16,7 +15,6 @@ import { ModalFormComponent } from './modal-form/modal-form.component';
     AppComponent,
     DoctorComponent,
     DialogComponent,
-    DoctorDetailComponent,
     ModalFormComponent
   ],
   imports: [
