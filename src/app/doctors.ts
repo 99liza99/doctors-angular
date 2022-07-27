@@ -11,3 +11,8 @@ export interface Specialization {
   id: number;
   value: string;
 }
+
+export interface Gender {
+  id: number;
+  gender: string;
+}
