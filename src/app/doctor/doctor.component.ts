@@ -20,15 +20,13 @@ export class DoctorComponent implements OnInit {
   ngOnInit(): void {}
 
   addItem(newItem: Doctor) {
-    // const spec = SPECIALIZAIONS.find(
-    //   (elemet) => elemet.id === Number(newItem.specialization)
-    // )!;
-    // newItem.img = 'assets/images/d1.jpg';
-    // newItem.id = this.doctors.length + 1;
-    // newItem.specialization = spec.value;
+    const spec = SPECIALIZAIONS.find(
+      (elemet) => elemet.id === Number(newItem.specialization)
+    )!;
+    newItem.img = 'assets/images/d1.jpg';
+    newItem.specialization = spec.value;
 
     this.doctorService.addDoctor(newItem);
-    // this.doctorService.doctorSave(newItem);
   }
 
   openDialog(
