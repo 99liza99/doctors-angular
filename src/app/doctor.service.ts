@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Observable, of } from 'rxjs';
+import { Subject, Observable, of, BehaviorSubject } from 'rxjs';
 import { Doctor } from './doctors';
 import { DOCTORS } from './doctors.const';
 
@@ -9,8 +9,11 @@ import { DOCTORS } from './doctors.const';
 export class DoctorService {
   constructor() {}
 
-  getDoctors(): Observable<Doctor[]> {
-    return of(DOCTORS);
+  private doctorList = new BehaviorSubject<Doctor[]>(DOCTORS);
+
+  doctorList$ = this.doctorList.asObservable();
+
+  addDoctor(doctor: Doctor) {
+    this.doctorList.next([...this.doctorList.value, doctor]);
   }
-  
 }

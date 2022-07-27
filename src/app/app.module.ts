@@ -9,13 +9,15 @@ import { MatNativeDateModule } from '@angular/material/core';
 import { DialogComponent } from './dialog/dialog.component';
 import { AppRoutingModule } from './app-routing.module';
 import { ModalFormComponent } from './modal-form/modal-form.component';
+import { FormPageComponent } from './form-page/form-page.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     DoctorComponent,
     DialogComponent,
-    ModalFormComponent
+    ModalFormComponent,
+    FormPageComponent
   ],
   imports: [
     BrowserModule,

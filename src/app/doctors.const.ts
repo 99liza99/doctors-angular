@@ -1,4 +1,4 @@
-import { Doctor, Specialization } from './doctors';
+import { Doctor, Specialization, Gender } from './doctors';
 
 export const DOCTORS: Doctor[] = [
   {
@@ -55,5 +55,16 @@ export const SPECIALIZAIONS: Specialization[] = [
   {
     id: 4,
     value: 'Dentist',
+  },
+];
+
+export const GENDER: Gender[] = [
+  {
+    id: 1,
+    gender: 'female',
+  },
+  {
+    id: 2,
+    gender: 'male',
   },
 ];

@@ -5,6 +5,7 @@ import { Doctor } from '../doctors';
 import { DOCTORS, SPECIALIZAIONS } from '../doctors.const';
 import { first, filter } from 'rxjs/operators';
 import { DoctorService } from '../doctor.service';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-doctor',
@@ -12,30 +13,22 @@ import { DoctorService } from '../doctor.service';
   styleUrls: ['./doctor.component.css'],
 })
 export class DoctorComponent implements OnInit {
-  doctors: Doctor[] = [];
+  doctors: Observable<Doctor[]> = this.doctorService.doctorList$;
 
-  constructor(public dialog: MatDialog, private doctorService: DoctorService) {
-    
-  }
+  constructor(public dialog: MatDialog, private doctorService: DoctorService) {}
 
   ngOnInit(): void {
-    this.getDoctors();
-  }
-  getDoctors(): void {
-    this.doctorService
-      .getDoctors()
-      .subscribe((doctors) => (this.doctors = doctors));
   }
 
   addItem(newItem: Doctor) {
-    const spec = SPECIALIZAIONS.find(
-      (elemet) => elemet.id === Number(newItem.specialization)
-    )!;
-    newItem.img = 'assets/images/d1.jpg';
-    newItem.id = this.doctors.length + 1;
-    newItem.specialization = spec.value;
+    // const spec = SPECIALIZAIONS.find(
+    //   (elemet) => elemet.id === Number(newItem.specialization)
+    // )!;
+    // newItem.img = 'assets/images/d1.jpg';
+    // newItem.id = this.doctors.length + 1;
+    // newItem.specialization = spec.value;
 
-    this.doctors.push(newItem);
+    this.doctorService.addDoctor(newItem);
     // this.doctorService.doctorSave(newItem);
   }
 

@@ -1,0 +1,17 @@
+<div class="form" formGroupName="doctorForm">
+  <mat-form-field class="example-full-width" appearance="fill">
+    <mat-label>Name:</mat-label>
+    <input type="text" pattern="[a-zA-Z ]*" matInput formControlName="name" />
+  </mat-form-field>
+
+  <mat-form-field appearance="fill">
+    <mat-label>Choose a doctor</mat-label>
+    <mat-select formControlName="doctor">
+      <mat-option *ngFor="let doctor of doctors | async" [value]="doctor">
+        {{ doctor.specialization }}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <input type="submin" value="submit" />
+</div>

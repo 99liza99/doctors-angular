@@ -1,8 +1,8 @@
-<form [formGroup]="doctorForm" (ngSubmit)="onSubmit(doctorForm)" class="doctor_form">
+ <form [formGroup]="doctorForm" (ngSubmit)="onSubmit(doctorForm)" class="doctor_form"> 
     <p>Form Status: {{ doctorForm.status }}</p>
     
       <mat-form-field class="example-full-width" appearance="fill">
-        <mat-label>Name</mat-label>
+        <mat-label>Name:</mat-label>
         <input type="text" pattern="[a-zA-Z ]*" matInput formControlName="name">
       </mat-form-field>
       
