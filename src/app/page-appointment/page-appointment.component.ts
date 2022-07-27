@@ -10,11 +10,12 @@ import {
 } from '@angular/forms';
 
 @Component({
-  selector: 'app-form-page',
-  templateUrl: './form-page.component.html',
-  styleUrls: ['./form-page.component.css'],
+  selector: 'app-page-appointment',
+  templateUrl: './page-appointment.component.html',
+  styleUrls: ['./page-appointment.component.css'],
 })
-export class FormPageComponent implements OnInit {
+export class PageAppointmentComponent implements OnInit {
+  
   doctorForm = this.fb.group({
     name: ['', [Validators.required, Validators.pattern('[A-Z][a-z ]*')]],
     doctor: ['', Validators.required],

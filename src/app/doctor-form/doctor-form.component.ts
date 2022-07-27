@@ -6,11 +6,11 @@ import { FormBuilder, FormGroup } from '@angular/forms';
 import { DoctorService } from '../doctor.service';
 
 @Component({
-  selector: 'app-modal-form',
-  templateUrl: './modal-form.component.html',
-  styleUrls: ['./modal-form.component.css'],
+  selector: 'app-doctor-form',
+  templateUrl: './doctor-form.component.html',
+  styleUrls: ['./doctor-form.component.css'],
 })
-export class ModalFormComponent implements OnInit {
+export class DoctorFormComponent implements OnInit {
   doctorForm = this.fb.group({
     name: ['', [Validators.required, Validators.pattern('[A-Z][a-z ]*')]],
     specialization: ['', Validators.required],

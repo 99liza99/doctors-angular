@@ -6,18 +6,18 @@ import { AppComponent } from './app.component';
 import { DoctorComponent } from './doctor/doctor.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatNativeDateModule } from '@angular/material/core';
-import { DialogComponent } from './dialog/dialog.component';
+import { ModalComponent } from './modal/modal.component';
 import { AppRoutingModule } from './app-routing.module';
-import { ModalFormComponent } from './modal-form/modal-form.component';
-import { FormPageComponent } from './form-page/form-page.component';
+import { DoctorFormComponent } from './doctor-form/doctor-form.component';
+import { PageAppointmentComponent } from './page-appointment/page-appointment.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     DoctorComponent,
-    DialogComponent,
-    ModalFormComponent,
-    FormPageComponent
+    ModalComponent,
+    DoctorFormComponent,
+    PageAppointmentComponent,
   ],
   imports: [
     BrowserModule,

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
-import { DialogComponent } from '../dialog/dialog.component';
+import { ModalComponent } from '../modal/modal.component';
 import { Doctor } from '../doctors';
 import { DOCTORS, SPECIALIZAIONS } from '../doctors.const';
 import { first, filter } from 'rxjs/operators';
@@ -17,8 +17,7 @@ export class DoctorComponent implements OnInit {
 
   constructor(public dialog: MatDialog, private doctorService: DoctorService) {}
 
-  ngOnInit(): void {
-  }
+  ngOnInit(): void {}
 
   addItem(newItem: Doctor) {
     // const spec = SPECIALIZAIONS.find(
@@ -36,7 +35,7 @@ export class DoctorComponent implements OnInit {
     enterAnimationDuration: string,
     exitAnimationDuration: string
   ): void {
-    const dialogRef = this.dialog.open(DialogComponent, {
+    const dialogRef = this.dialog.open(ModalComponent, {
       width: '400px',
       enterAnimationDuration,
       exitAnimationDuration,

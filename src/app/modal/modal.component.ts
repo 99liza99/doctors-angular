@@ -7,14 +7,14 @@ import { Doctor } from '../doctors';
 
 @Component({
   selector: 'app-dialog',
-  templateUrl: './dialog.component.html',
-  styleUrls: ['./dialog.component.css'],
+  templateUrl: './modal.component.html',
+  styleUrls: ['./modal.component.css'],
 })
-export class DialogComponent {
+export class ModalComponent {
   
 
   constructor(
-    public dialogRef: MatDialogRef<DialogComponent>,
+    public dialogRef: MatDialogRef<ModalComponent>,
     public dialog: MatDialog, 
   ) {}
 

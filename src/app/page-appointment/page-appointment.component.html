@@ -1,4 +1,4 @@
-<div class="form" formGroupName="doctorForm">
+<form [formGroup]="doctorForm" class="form">
   <mat-form-field class="example-full-width" appearance="fill">
     <mat-label>Name:</mat-label>
     <input type="text" pattern="[a-zA-Z ]*" matInput formControlName="name" />
@@ -12,6 +12,4 @@
       </mat-option>
     </mat-select>
   </mat-form-field>
-
-  <input type="submin" value="submit" />
-</div>
+</form>
