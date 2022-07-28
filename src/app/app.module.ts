@@ -11,6 +11,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { DoctorFormComponent } from './doctor-form/doctor-form.component';
 import { PageAppointmentComponent } from './page-appointment/page-appointment.component';
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -18,6 +19,7 @@ import { PageAppointmentComponent } from './page-appointment/page-appointment.co
     ModalComponent,
     DoctorFormComponent,
     PageAppointmentComponent,
+  
   ],
   imports: [
     BrowserModule,
