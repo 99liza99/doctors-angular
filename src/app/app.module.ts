@@ -10,6 +10,7 @@ import { ModalComponent } from './modal/modal.component';
 import { AppRoutingModule } from './app-routing.module';
 import { DoctorFormComponent } from './doctor-form/doctor-form.component';
 import { PageAppointmentComponent } from './page-appointment/page-appointment.component';
+import { CardDoctorComponent } from './card-doctor/card-doctor.component';
 
 
 @NgModule({
@@ -19,6 +20,7 @@ import { PageAppointmentComponent } from './page-appointment/page-appointment.co
     ModalComponent,
     DoctorFormComponent,
     PageAppointmentComponent,
+    CardDoctorComponent,
   
   ],
   imports: [
