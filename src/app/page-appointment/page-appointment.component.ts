@@ -15,7 +15,7 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 @Component({
   selector: 'app-page-appointment',
   templateUrl: './page-appointment.component.html',
-  styleUrls: ['./page-appointment.component.css'],
+  styleUrls: ['./page-appointment.component.scss'],
 })
 export class PageAppointmentComponent implements OnInit {
   doctorForm = this.fb.group({
@@ -29,7 +29,7 @@ export class PageAppointmentComponent implements OnInit {
   doctors: Observable<Doctor[]> = this.doctorService.doctorList$;
   genders: Gender[] = GENDER;
   selectedDoctor: Doctor | undefined;
-  
+
   constructor(
     private doctorService: DoctorService,
     private fb: FormBuilder,
@@ -47,6 +47,7 @@ export class PageAppointmentComponent implements OnInit {
   openSnackBar(templateRef: TemplateRef<any>) {
     this._snackBar.openFromTemplate(templateRef, {
       duration: 3 * 1000,
+      verticalPosition: "top"
     });
   }
 }
