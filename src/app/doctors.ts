@@ -14,5 +14,5 @@ export interface Specialization {
 
 export interface Gender {
   id: number;
-  gender: string;
+  name: string;
 }

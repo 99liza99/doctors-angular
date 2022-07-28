@@ -1,7 +1,6 @@
 import { Component} from '@angular/core';
 import {MatDialog,MatDialogRef,} from '@angular/material/dialog';
-import { Observable } from 'rxjs';
-import { Doctor } from '../doctors';
+
 
   
 
