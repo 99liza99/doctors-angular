@@ -1,4 +1,4 @@
-import { Component, OnInit,Output, EventEmitter } from '@angular/core';
+import { Component, OnInit,Output, EventEmitter, TemplateRef } from '@angular/core';
 import { DoctorService } from '../doctor.service';
 import { Doctor, Gender}  from '../doctors';
 import { Observable } from 'rxjs';
@@ -8,7 +8,7 @@ import {
   FormBuilder,
 } from '@angular/forms';
 import {GENDER} from '../doctors.const';
-import { BehaviorSubject } from 'rxjs';
+import {MatSnackBar} from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-page-appointment',
@@ -22,14 +22,13 @@ export class PageAppointmentComponent implements OnInit {
     doctor: ['', Validators.required],
     picker: ['',Validators.required],
     gender: ['',Validators.required],
-    specialization: ['',Validators.required],
     desc: ['',Validators.required],
   });
   
   
   doctors: Observable<Doctor[]> = this.doctorService.doctorList$;
   genders: Gender[]=GENDER;
-  constructor(private doctorService: DoctorService, private fb: FormBuilder, ) {}
+  constructor(private doctorService: DoctorService, private fb: FormBuilder,private _snackBar: MatSnackBar ) {}
   
   @Output() newItemEvent = new EventEmitter<Doctor>();
   
@@ -39,7 +38,9 @@ export class PageAppointmentComponent implements OnInit {
     console.log(form.value);
     this.newItemEvent.emit(form.value);
   }
- 
+  openSnackBar(templateRef: TemplateRef<any>) {
+    this._snackBar.openFromTemplate(templateRef);
+  }
 }
 
 
