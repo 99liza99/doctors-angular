@@ -61,10 +61,10 @@ export const SPECIALIZAIONS: Specialization[] = [
 export const GENDER: Gender[] = [
   {
     id: 1,
-    gender: 'female',
+    name: 'female',
   },
   {
     id: 2,
-    gender: 'male',
+    name: 'male',
   },
 ];
