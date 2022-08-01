@@ -4,6 +4,7 @@ import {
   Output,
   EventEmitter,
   TemplateRef,
+  ViewEncapsulation,
 } from '@angular/core';
 import { DoctorService } from '../doctor.service';
 import { Doctor, Gender } from '../doctors';
@@ -46,7 +47,6 @@ export class PageAppointmentComponent implements OnInit {
   }
   openSnackBar(templateRef: TemplateRef<any>) {
     this._snackBar.openFromTemplate(templateRef, {
-      duration: 3 * 1000,
       verticalPosition: "top"
     });
   }

@@ -21,7 +21,6 @@ import { CardDoctorComponent } from './card-doctor/card-doctor.component';
     DoctorFormComponent,
     PageAppointmentComponent,
     CardDoctorComponent,
-  
   ],
   imports: [
     BrowserModule,

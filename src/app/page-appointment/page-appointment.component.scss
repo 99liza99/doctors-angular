@@ -16,16 +16,17 @@
        width: 100%;
         box-sizing: border-box;
     }
-    
-    .snackbar {
-        text-align: center;
-    }
-    .snackbar span {
+}
+
+.snackbar {
+    text-align: center;
+
+    span {
         color: whitesmoke;
     }
-    .snackbar .fa-solid {
+
+    .fa-solid {
         color: green;
         padding: 5px;
     }
-    
 }
