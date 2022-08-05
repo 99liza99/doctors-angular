@@ -26,7 +26,6 @@ export class DoctorFormComponent implements OnInit {
   ngOnInit(): void {}
 
   onSubmit(form: FormGroup) {
-    console.log(form.value);
     this.newItemEvent.emit(form.value);
   }
 }

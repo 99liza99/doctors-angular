@@ -27,7 +27,7 @@ export class PageAppointmentComponent implements OnInit {
     desc: ['', Validators.required],
   });
 
-  doctors: Observable<Doctor[]> = this.doctorService.doctorList$;
+  doctors: Observable<Doctor[]> = this.doctorService.doctorList;
   genders: Gender[] = GENDER;
   selectedDoctor: Doctor | undefined;
 
@@ -39,7 +39,9 @@ export class PageAppointmentComponent implements OnInit {
 
   @Output() newItemEvent = new EventEmitter<Doctor>();
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.doctorService.doctors$.subscribe()
+  }
 
   onSubmit(form: FormGroup) {
     console.log(form.value);

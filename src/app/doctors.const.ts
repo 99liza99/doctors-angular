@@ -1,5 +1,6 @@
 import { Doctor, Specialization, Gender } from './doctors';
 
+
 export const DOCTORS: Doctor[] = [
   {
     id: 1,

@@ -11,6 +11,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { DoctorFormComponent } from './doctor-form/doctor-form.component';
 import { PageAppointmentComponent } from './page-appointment/page-appointment.component';
 import { CardDoctorComponent } from './card-doctor/card-doctor.component';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
 
 
 @NgModule({
@@ -30,6 +31,7 @@ import { CardDoctorComponent } from './card-doctor/card-doctor.component';
     ReactiveFormsModule,
     MatNativeDateModule,
     AppRoutingModule,
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

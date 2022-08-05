@@ -13,11 +13,13 @@ import { Observable } from 'rxjs';
   styleUrls: ['./doctor.component.css'],
 })
 export class DoctorComponent implements OnInit {
-  doctors: Observable<Doctor[]> = this.doctorService.doctorList$;
+  doctors: Observable<Doctor[]> = this.doctorService.doctorList;
 
   constructor(public dialog: MatDialog, private doctorService: DoctorService) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.doctorService.doctors$.subscribe();
+  }
 
   addItem(newItem: Doctor) {
     const spec = SPECIALIZAIONS.find(
@@ -45,7 +47,6 @@ export class DoctorComponent implements OnInit {
         filter((result) => !!result)
       )
       .subscribe((result) => {
-        console.log('The dialog was closed', result);
         this.addItem(result);
       });
   }

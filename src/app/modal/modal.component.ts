@@ -20,5 +20,6 @@ export class ModalComponent {
 
   addItem(event: any) {
     this.dialogRef.close(event)
+
   }
 }

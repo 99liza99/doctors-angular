@@ -1,19 +1,32 @@
 import { Injectable } from '@angular/core';
-import { BehaviorSubject } from 'rxjs';
+import { BehaviorSubject, Observable, tap } from 'rxjs';//you forget impoer tab from rjsx
 import { Doctor } from './doctors';
 import { DOCTORS } from './doctors.const';
+import { DoctorsApiService } from './doctors-api.service';
 
 @Injectable({
   providedIn: 'root',
 })
 export class DoctorService {
-  constructor() {}
+  doctorList: BehaviorSubject<Doctor[]> = new BehaviorSubject([] as Doctor[]);
 
-  private doctorList = new BehaviorSubject<Doctor[]>(DOCTORS);
+  doctors$: Observable<Doctor[]> = this.doctorsApiService
+    .getDoctors()
+    .pipe(tap((doctors) => this.doctorList.next(doctors)));
 
-  doctorList$ = this.doctorList.asObservable();
+  constructor(private doctorsApiService: DoctorsApiService) {}
 
-  addDoctor(doctor: Doctor) {
-    this.doctorList.next([...this.doctorList.value, doctor]);
+  addDoctor(newDoctor: Doctor): Observable<Doctor> {
+    return this.doctorsApiService
+      .addDoctor(newDoctor)
+      .pipe(
+        tap((doctor) =>
+          this.doctorList.next([...this.doctorList.value, doctor])
+        )
+      );
   }
+
+  // private doctorList = new BehaviorSubject<Doctor[]>(DOCTORS);
+
+  // doctorList$ = this.doctorList.asObservable();
 }
