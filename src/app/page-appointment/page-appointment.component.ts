@@ -49,7 +49,7 @@ export class PageAppointmentComponent implements OnInit {
   }
   openSnackBar(templateRef: TemplateRef<any>) {
     this._snackBar.openFromTemplate(templateRef, {
-      verticalPosition: "top"
+      verticalPosition: "top" 
     });
   }
 }

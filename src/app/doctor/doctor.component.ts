@@ -28,7 +28,11 @@ export class DoctorComponent implements OnInit {
     newItem.img = 'assets/images/d1.jpg';
     newItem.specialization = spec.value;
 
-    this.doctorService.addDoctor(newItem);
+    this.doctorService.addDoctor(newItem).subscribe();
+  }
+
+  deleteItem(_id: String){
+    this.doctorService.deleteDoctor(_id).subscribe();
   }
 
   openDialog(

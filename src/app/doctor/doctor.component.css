@@ -1,7 +1,7 @@
 .cards {
   display: flex;
   flex-wrap: wrap;
-  
+  justify-content: space-between;
 }
 
 .cards .card {
@@ -21,7 +21,6 @@
 }
 .card p {
   color: #474444;
-  padding: 10px;
 }
 .card .name {
   font-weight: bold;

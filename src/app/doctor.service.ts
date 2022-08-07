@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject, Observable, tap } from 'rxjs';
 import { Doctor } from './doctors';
-import { DOCTORS } from './doctors.const';
 import { DoctorsApiService } from './doctors-api.service';
 
 @Injectable({
@@ -26,15 +25,21 @@ export class DoctorService {
       );
   }
 
-
+  deleteDoctor(id: String) {
+    return this.doctorsApiService
+      .deleteDoctor(id)
+      .pipe(
+        tap((deletedDdoctor) =>
+          this.doctorList.next(
+            this.doctorList.value.filter(
+              (doctor: Doctor) => doctor._id !== deletedDdoctor._id
+            )
+          )
+        )
+      );
+  }
 }
 
+// private doctorList = new BehaviorSubject<Doctor[]>(DOCTORS);
 
-
-
-
-
-  // private doctorList = new BehaviorSubject<Doctor[]>(DOCTORS);
-
-  // doctorList$ = this.doctorList.asObservable();
-
+// doctorList$ = this.doctorList.asObservable();
