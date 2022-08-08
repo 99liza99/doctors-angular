@@ -15,7 +15,7 @@
     <!-- Picker Column -->
     <ng-container matColumnDef="picker">
       <th mat-header-cell *matHeaderCellDef> Picker</th>
-      <td mat-cell *matCellDef="let element"> {{element.picker}} </td>
+      <td mat-cell *matCellDef="let element"> {{element.picker | date }} </td>
     </ng-container>
   
     <!-- Comment Column -->

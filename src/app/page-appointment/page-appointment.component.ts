@@ -35,9 +35,11 @@ export class PageAppointmentComponent {
     tap((doctors) => {
       const doctorId = this.route.snapshot.queryParamMap.get('doctor_id');
       this.doctorForm.patchValue({
-        doctor: doctorId,
+      // doctor:  doctors.find((docotor)=>docotor._id ===  doctorId )
+        
       });
     })
+    
   );
   // const spec = SPECIALIZAIONS.find(
   //   (elemet) => elemet.id === Number(newItem.specialization)

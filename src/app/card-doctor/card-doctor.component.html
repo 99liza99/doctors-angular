@@ -3,7 +3,7 @@
     <mat-card-title-group>
       <mat-card-title>{{ doctor.name }}</mat-card-title>
       <mat-card-subtitle>{{ doctor.specialization }}</mat-card-subtitle>
-      <img mat-card-sm-image src="{{ doctor.img }}" />
+      <img mat-card-sm-image [src]=" doctor.img " />
     </mat-card-title-group>
     <mat-card-content>
       <p>
