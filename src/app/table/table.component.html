@@ -1,0 +1,38 @@
+<div *ngIf="appoitments">
+ <table mat-table [dataSource]="appoitments" class="mat-elevation-z8">
+
+    <ng-container matColumnDef="name">
+      <th mat-header-cell *matHeaderCellDef> Name </th>
+      <td mat-cell *matCellDef="let element"> {{element.name}} </td>
+    </ng-container>
+  
+    <!-- Gender Column -->
+    <ng-container matColumnDef="gender">
+      <th mat-header-cell *matHeaderCellDef> Gender</th>
+      <td mat-cell *matCellDef="let element"> {{element.gender}} </td>
+    </ng-container>
+  
+    <!-- Picker Column -->
+    <ng-container matColumnDef="picker">
+      <th mat-header-cell *matHeaderCellDef> Picker</th>
+      <td mat-cell *matCellDef="let element"> {{element.picker}} </td>
+    </ng-container>
+  
+    <!-- Comment Column -->
+    <ng-container matColumnDef="comment">
+      <th mat-header-cell *matHeaderCellDef> Comment </th>
+      <td mat-cell *matCellDef="let element"> {{element.comment}} </td>
+    </ng-container>
+
+    <!-- Doctor Column -->
+
+    <ng-container matColumnDef="doctor">
+        <th mat-header-cell *matHeaderCellDef> Doctor </th>
+        <td mat-cell *matCellDef="let element"> {{element.doctor}} </td>
+      </ng-container>
+  
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
+</div>
+  

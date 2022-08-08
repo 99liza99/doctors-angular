@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { ModalComponent } from '../modal/modal.component';
 import { Doctor } from '../doctors';
-import { DOCTORS, SPECIALIZAIONS } from '../doctors.const';
+import { SPECIALIZAIONS } from '../doctors.const';
 import { first, filter } from 'rxjs/operators';
 import { DoctorService } from '../doctor.service';
 import { Observable } from 'rxjs';

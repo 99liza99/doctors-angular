@@ -19,6 +19,8 @@ export interface Gender {
 export interface Appoitment {
   name: string;
   doctor: string;
-  gender: string
-
+  gender: string;
+  picker: string;
+  comment: string;
 }
+
