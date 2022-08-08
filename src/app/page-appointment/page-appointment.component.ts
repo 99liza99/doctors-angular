@@ -30,20 +30,16 @@ export class PageAppointmentComponent {
   });
 
   doctors$: Observable<Doctor[]> = this.doctorService.doctorList$.pipe(
-    debounceTime(200),
     tap((doctors) => {
       const doctorId = this.route.snapshot.queryParamMap.get('doctorId');
-      console.log("test",  doctors.find((doctor)=>doctor._id ===  doctorId))
-      this.doctorForm.patchValue({
-       doctor: doctors.find((doctor)=>doctor._id ===  doctorId) as any
-      });
+      if (doctorId) {
+        this.doctorForm.patchValue({
+          doctor: doctors.find((doctor) => doctor._id === doctorId) as any,
+        });
+      }
     })
-    
   );
-  // const spec = SPECIALIZAIONS.find(
-  //   (elemet) => elemet.id === Number(newItem.specialization)
-  // )!;
-  
+
   genders: Gender[] = GENDER;
   selectedDoctor: Doctor | undefined;
 
@@ -58,15 +54,13 @@ export class PageAppointmentComponent {
   @Output() newItemEvent = new EventEmitter<Doctor>();
 
   onSubmit(form: FormGroup) {
-    let appointment: Appoitment = form.value;
-    appointment.doctor = form.value.doctor;
-    appointment.gender = form.value.gender.name;
     this.appoitmentService.addAppoitment(form.value).subscribe();
     this.newItemEvent.emit(form.value);
   }
   openSnackBar(templateRef: TemplateRef<any>) {
     this._snackBar.openFromTemplate(templateRef, {
       verticalPosition: 'top',
+      duration: 3000,
     });
   }
 }
