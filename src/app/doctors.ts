@@ -17,6 +17,7 @@ export interface Gender {
   name: string;
 }
 export interface Appoitment {
+  _id: string;
   name: string;
   doctor: string;
   gender: string;

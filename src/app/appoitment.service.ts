@@ -26,4 +26,19 @@ export class AppoitmentService {
         )
       );
   }
+  deleteAppoitment(id: String) {
+    return this.appoitmentsApiService
+      .deleteAppoitment(id)
+      .pipe(
+        tap((deletedAppoitment) =>
+          this.appoitmentList.next(
+            this.appoitmentList.value.filter(
+              (appoitment: Appoitment) =>
+              appoitment._id !==
+              deletedAppoitment._id /** Remove deleted appoitment from our list */
+            )
+          )
+        )
+      );
+  }
 }

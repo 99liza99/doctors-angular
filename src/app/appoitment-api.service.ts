@@ -16,4 +16,7 @@ export class AppoitmentApiService {
   addAppoitment(appoitment: Appoitment): Observable<Appoitment> {
     return this.http.post<Appoitment>('http://localhost:3000/appoitment/', appoitment);
   }
+  deleteAppoitment(_id: String): Observable<Appoitment> {
+    return this.http.delete<Appoitment>('http://localhost:3000/appoitment/'+_id);
+  }
 }
