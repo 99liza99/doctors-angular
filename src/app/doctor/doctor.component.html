@@ -1,23 +1,26 @@
 <div class="container">
-  <button mat-raised-button (click)="openDialog('0ms', '0ms')">Add Doctor</button>
+  <button mat-raised-button (click)="openDialog('0ms', '0ms')">
+    Add Doctor
+  </button>
 </div>
 <div class="cards">
-  <mat-card class="card" *ngFor="let doctor of doctors | async">
-    <mat-card-title-group>
-      <mat-card-title>{{doctor.name}}</mat-card-title>
-      <mat-card-subtitle>{{ doctor.specialization }}</mat-card-subtitle>
-      <img mat-card-sm-image src="{{ doctor.img }}" />
-    </mat-card-title-group>
-    <mat-card-content>
-      <p>
-        {{ doctor.description }}
-      </p>
-    </mat-card-content>
-    <mat-card-actions align="end">
-      <button mat-button title="Delte" (click)="deleteItem(doctor._id)"><i class="fa-solid fa-trash-can"></i></button>
-    </mat-card-actions>
+  <mat-card class="card" *ngFor="let doctor of doctors$ | async">
+    <a [routerLink]="['/appointment', doctor._id]"
+      ><mat-card-title-group>
+        <mat-card-title>{{ doctor.name }}</mat-card-title>
+        <mat-card-subtitle>{{ doctor.specialization }}</mat-card-subtitle>
+        <img mat-card-sm-image [src]="doctor.img" />
+      </mat-card-title-group>
+      <mat-card-content>
+        <p>
+          {{ doctor.description }}
+        </p>
+      </mat-card-content>
+      <mat-card-actions align="end">
+        <button mat-button title="Delete" (click)="deleteItem(doctor._id)">
+          <i class="fa-solid fa-trash-can"></i>
+        </button>
+      </mat-card-actions>
+    </a>
   </mat-card>
 </div>
-<!-- Перенести это в отдельный компонент, добавить в инпут это всё, так чтоб на аппойтменте отображалась при выборе врача его -->
-
-

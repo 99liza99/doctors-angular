@@ -4,22 +4,24 @@ import {
   Output,
   EventEmitter,
   TemplateRef,
-  ViewEncapsulation,
+  AfterViewInit,
 } from '@angular/core';
 import { DoctorService } from '../doctor.service';
 import { Doctor, Gender, Appoitment } from '../doctors';
 import { Observable } from 'rxjs';
+import { debounceTime, first, takeUntil, tap } from 'rxjs/operators';
 import { FormGroup, Validators, FormBuilder } from '@angular/forms';
 import { GENDER } from '../doctors.const';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { AppoitmentService } from '../appoitment.service';
+import { ActivatedRoute, Route, ParamMap } from '@angular/router';
 
 @Component({
   selector: 'app-page-appointment',
   templateUrl: './page-appointment.component.html',
   styleUrls: ['./page-appointment.component.scss'],
 })
-export class PageAppointmentComponent implements OnInit {
+export class PageAppointmentComponent {
   doctorForm = this.fb.group({
     name: ['', [Validators.required, Validators.pattern('[A-Z][a-z ]*')]],
     doctor: ['', Validators.required],
@@ -28,7 +30,15 @@ export class PageAppointmentComponent implements OnInit {
     comment: ['', Validators.required],
   });
 
-  doctors: Observable<Doctor[]> = this.doctorService.doctorList;
+  doctors$: Observable<Doctor[]> = this.doctorService.doctorList$.pipe(
+    debounceTime(200),
+    tap(() => {
+      const doctorId = this.route.snapshot.paramMap.get('doctor_id');
+      this.doctorForm.patchValue({
+        doctor: doctorId,
+      });
+    })
+  );
   genders: Gender[] = GENDER;
   selectedDoctor: Doctor | undefined;
 
@@ -36,18 +46,15 @@ export class PageAppointmentComponent implements OnInit {
     private doctorService: DoctorService,
     private fb: FormBuilder,
     private _snackBar: MatSnackBar,
-    private appoitmentService: AppoitmentService
+    private appoitmentService: AppoitmentService,
+    private route: ActivatedRoute
   ) {}
 
   @Output() newItemEvent = new EventEmitter<Doctor>();
 
-  ngOnInit(): void {
-    this.doctorService.doctors$.subscribe();
-  }
-
   onSubmit(form: FormGroup) {
-    let appointment : Appoitment = form.value;
-    appointment.doctor = form.value.doctor.name;
+    let appointment: Appoitment = form.value;
+    appointment.doctor = form.value.doctor;
     appointment.gender = form.value.gender.name;
     this.appoitmentService.addAppoitment(form.value).subscribe();
     this.newItemEvent.emit(form.value);

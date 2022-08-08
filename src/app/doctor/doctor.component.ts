@@ -12,14 +12,10 @@ import { Observable } from 'rxjs';
   templateUrl: './doctor.component.html',
   styleUrls: ['./doctor.component.css'],
 })
-export class DoctorComponent implements OnInit {
-  doctors: Observable<Doctor[]> = this.doctorService.doctorList;
+export class DoctorComponent {
+  doctors$: Observable<Doctor[]> = this.doctorService.doctorList$;
 
   constructor(public dialog: MatDialog, private doctorService: DoctorService) {}
-
-  ngOnInit(): void {
-    this.doctorService.doctors$.subscribe();
-  }
 
   addItem(newItem: Doctor) {
     const spec = SPECIALIZAIONS.find(
