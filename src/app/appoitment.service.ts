@@ -17,7 +17,7 @@ export class AppoitmentService {
     .getAppoitments()
     .pipe(tap((Appoitments) => this.appoitmentList.next(Appoitments)));
 
-    addAppoitment(newAppoitment: Appoitment): Observable<Appoitment> {
+  addAppoitment(newAppoitment: Appoitment): Observable<Appoitment> {
     return this.appoitmentsApiService
       .addAppoitment(newAppoitment)
       .pipe(
