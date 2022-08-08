@@ -48,7 +48,7 @@ export class PageAppointmentComponent implements OnInit {
   onSubmit(form: FormGroup) {
     let appointment : Appoitment = form.value;
     appointment.doctor = form.value.doctor.name;
-    /** Add gender like docotr ex. (appointment.gender = form.value.gender.name;) */
+    appointment.gender = form.value.gender.name;
     this.appoitmentService.addAppoitment(form.value).subscribe();
     this.newItemEvent.emit(form.value);
   }

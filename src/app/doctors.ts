@@ -19,6 +19,6 @@ export interface Gender {
 export interface Appoitment {
   name: string;
   doctor: string;
-  /** add other fields */
+  gender: string
 
 }

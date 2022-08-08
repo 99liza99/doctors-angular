@@ -12,6 +12,7 @@ import { DoctorFormComponent } from './doctor-form/doctor-form.component';
 import { PageAppointmentComponent } from './page-appointment/page-appointment.component';
 import { CardDoctorComponent } from './card-doctor/card-doctor.component';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { TableComponent } from './table/table.component';
 
 
 @NgModule({
@@ -22,6 +23,7 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
     DoctorFormComponent,
     PageAppointmentComponent,
     CardDoctorComponent,
+    TableComponent,
   ],
   imports: [
     BrowserModule,
