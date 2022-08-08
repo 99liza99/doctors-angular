@@ -16,3 +16,9 @@ export interface Gender {
   id: number;
   name: string;
 }
+export interface Appoitment {
+  name: string;
+  doctor: string;
+  /** add other fields */
+
+}

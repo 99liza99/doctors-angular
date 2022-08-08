@@ -7,11 +7,12 @@ import {
   ViewEncapsulation,
 } from '@angular/core';
 import { DoctorService } from '../doctor.service';
-import { Doctor, Gender } from '../doctors';
+import { Doctor, Gender, Appoitment } from '../doctors';
 import { Observable } from 'rxjs';
 import { FormGroup, Validators, FormBuilder } from '@angular/forms';
 import { GENDER } from '../doctors.const';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { AppoitmentService } from '../appoitment.service';
 
 @Component({
   selector: 'app-page-appointment',
@@ -24,7 +25,7 @@ export class PageAppointmentComponent implements OnInit {
     doctor: ['', Validators.required],
     picker: ['', Validators.required],
     gender: ['', Validators.required],
-    desc: ['', Validators.required],
+    comment: ['', Validators.required],
   });
 
   doctors: Observable<Doctor[]> = this.doctorService.doctorList;
@@ -34,22 +35,26 @@ export class PageAppointmentComponent implements OnInit {
   constructor(
     private doctorService: DoctorService,
     private fb: FormBuilder,
-    private _snackBar: MatSnackBar
+    private _snackBar: MatSnackBar,
+    private appoitmentService: AppoitmentService
   ) {}
 
   @Output() newItemEvent = new EventEmitter<Doctor>();
 
   ngOnInit(): void {
-    this.doctorService.doctors$.subscribe()
+    this.doctorService.doctors$.subscribe();
   }
 
   onSubmit(form: FormGroup) {
-    console.log(form.value);
+    let appointment : Appoitment = form.value;
+    appointment.doctor = form.value.doctor.name;
+    /** Add gender like docotr ex. (appointment.gender = form.value.gender.name;) */
+    this.appoitmentService.addAppoitment(form.value).subscribe();
     this.newItemEvent.emit(form.value);
   }
   openSnackBar(templateRef: TemplateRef<any>) {
     this._snackBar.openFromTemplate(templateRef, {
-      verticalPosition: "top" 
+      verticalPosition: 'top',
     });
   }
 }

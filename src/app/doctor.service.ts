@@ -11,7 +11,7 @@ export class DoctorService {
 
   doctors$: Observable<Doctor[]> = this.doctorsApiService
     .getDoctors()
-    .pipe(tap((doctors) => this.doctorList.next(doctors)));
+    .pipe(tap((doctors) => this.doctorList.next(doctors)));/** Just getting list doctors */
 
   constructor(private doctorsApiService: DoctorsApiService) {}
 
@@ -20,7 +20,7 @@ export class DoctorService {
       .addDoctor(newDoctor)
       .pipe(
         tap((doctor) =>
-          this.doctorList.next([...this.doctorList.value, doctor])
+          this.doctorList.next([...this.doctorList.value, doctor])/** Add new doctor for our lisr docotrs */
         )
       );
   }
@@ -32,7 +32,7 @@ export class DoctorService {
         tap((deletedDdoctor) =>
           this.doctorList.next(
             this.doctorList.value.filter(
-              (doctor: Doctor) => doctor._id !== deletedDdoctor._id
+              (doctor: Doctor) => doctor._id !== deletedDdoctor._id/** Remove deleted doctor from our list */
             )
           )
         )
@@ -40,6 +40,4 @@ export class DoctorService {
   }
 }
 
-// private doctorList = new BehaviorSubject<Doctor[]>(DOCTORS);
 
-// doctorList$ = this.doctorList.asObservable();
