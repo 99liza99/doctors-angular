@@ -32,13 +32,17 @@ export class PageAppointmentComponent {
 
   doctors$: Observable<Doctor[]> = this.doctorService.doctorList$.pipe(
     debounceTime(200),
-    tap(() => {
-      const doctorId = this.route.snapshot.paramMap.get('doctor_id');
+    tap((doctors) => {
+      const doctorId = this.route.snapshot.queryParamMap.get('doctor_id');
       this.doctorForm.patchValue({
         doctor: doctorId,
       });
     })
   );
+  // const spec = SPECIALIZAIONS.find(
+  //   (elemet) => elemet.id === Number(newItem.specialization)
+  // )!;
+  
   genders: Gender[] = GENDER;
   selectedDoctor: Doctor | undefined;
 
