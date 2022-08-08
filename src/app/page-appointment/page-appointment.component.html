@@ -11,7 +11,7 @@
       <mat-form-field appearance="fill">
         <mat-label>Choose a doctor</mat-label>
         <mat-select formControlName="doctor" [(ngModel)]="selectedDoctor">
-          <mat-option *ngFor="let doctor of doctors$ | async" [value]="doctor._id">
+          <mat-option *ngFor="let doctor of doctors$ | async" [value]="doctor">
             {{ doctor.name }}
           </mat-option>
         </mat-select>
@@ -74,4 +74,4 @@
   
   
 </div>
-<app-table></app-table>
+ <app-table></app-table> 

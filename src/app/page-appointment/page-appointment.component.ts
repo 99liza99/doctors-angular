@@ -1,6 +1,5 @@
 import {
   Component,
-  OnInit,
   Output,
   EventEmitter,
   TemplateRef,
@@ -14,7 +13,7 @@ import { FormGroup, Validators, FormBuilder } from '@angular/forms';
 import { GENDER } from '../doctors.const';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { AppoitmentService } from '../appoitment.service';
-import { ActivatedRoute, Route, ParamMap } from '@angular/router';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-page-appointment',
@@ -33,10 +32,10 @@ export class PageAppointmentComponent {
   doctors$: Observable<Doctor[]> = this.doctorService.doctorList$.pipe(
     debounceTime(200),
     tap((doctors) => {
-      const doctorId = this.route.snapshot.queryParamMap.get('doctor_id');
+      const doctorId = this.route.snapshot.queryParamMap.get('doctorId');
+      console.log("test",  doctors.find((doctor)=>doctor._id ===  doctorId))
       this.doctorForm.patchValue({
-      // doctor:  doctors.find((docotor)=>docotor._id ===  doctorId )
-        
+       doctor: doctors.find((doctor)=>doctor._id ===  doctorId) as any
       });
     })
     

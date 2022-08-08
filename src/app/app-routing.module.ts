@@ -8,7 +8,6 @@ const routes: Routes = [
   { path: '', redirectTo: '/doctors', pathMatch: 'full' },//Default patch
   { path: 'doctors', component: DoctorComponent },
   { path: 'appointment', component: PageAppointmentComponent},
-  { path: 'appointment/:doctor_id', component: PageAppointmentComponent}
 ];
 
 @NgModule({
