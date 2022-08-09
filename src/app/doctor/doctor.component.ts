@@ -6,6 +6,7 @@ import { SPECIALIZAIONS } from '../doctors.const';
 import { first, filter } from 'rxjs/operators';
 import { DoctorService } from '../doctor.service';
 import { Observable } from 'rxjs';
+import { ConfirmComponent } from '../confirm/confirm.component';
 
 @Component({
   selector: 'app-doctor',
@@ -27,7 +28,29 @@ export class DoctorComponent {
     this.doctorService.addDoctor(newItem).subscribe();
   }
 
-  deleteItem(_id: String){
+  openConfirm(
+    enterAnimationDuration: string,
+    exitAnimationDuration: string,
+    _id: string
+  ): void {
+    const dialogRef = this.dialog.open(ConfirmComponent, {
+      width: '250px',
+      enterAnimationDuration,
+      exitAnimationDuration,
+    });
+    dialogRef
+      .afterClosed()
+      .pipe(
+        first(),
+        filter((result) => !!result)
+      )
+      .subscribe((result) => {
+        if (result === true) {
+          this.deleteItem(_id);
+        }
+      });
+  }
+  deleteItem(_id: String) {
     this.doctorService.deleteDoctor(_id).subscribe();
   }
 
