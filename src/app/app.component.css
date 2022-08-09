@@ -11,5 +11,7 @@ nav {
 }
 nav ul li a {
 list-style-type: none;
+font-family: 'tiro.woff2';
+font-size: 20px;
 color: rgb(57, 58, 58);
 }
