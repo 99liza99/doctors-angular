@@ -13,6 +13,7 @@ import { PageAppointmentComponent } from './page-appointment/page-appointment.co
 import { CardDoctorComponent } from './card-doctor/card-doctor.component';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { TableComponent } from './table/table.component';
+import { ConfirmComponent } from './confirm/confirm.component';
 
 
 @NgModule({
@@ -24,6 +25,7 @@ import { TableComponent } from './table/table.component';
     PageAppointmentComponent,
     CardDoctorComponent,
     TableComponent,
+    ConfirmComponent,
   ],
   imports: [
     BrowserModule,
