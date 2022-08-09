@@ -4,7 +4,7 @@
   </button>
 </div>
 <div class="cards">
-  <mat-card class="card" *ngFor="let doctor of doctors$ | async">
+  <mat-card class="card" *ngFor="let doctor of doctors$ | async | slice:start:end">
     <a [routerLink]="['/appointment']" [queryParams]="{ doctorId: doctor._id }"
       ><mat-card-title-group>
         <mat-card-title>{{ doctor.name }}</mat-card-title>
@@ -29,5 +29,7 @@
       <i class="fa-solid fa-trash-can"></i>
     </button>
   </mat-card>
-</div>
-<!-- (click)="deleteItem(doctor._id)"  -->
+  
+    <button mat-button >Read more...</button>
+  </div>
+

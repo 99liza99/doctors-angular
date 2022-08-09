@@ -15,6 +15,8 @@ import { ConfirmComponent } from '../confirm/confirm.component';
 })
 export class DoctorComponent {
   doctors$: Observable<Doctor[]> = this.doctorService.doctorList$;
+  start: number = 3;
+  end: number = 10;
 
   constructor(public dialog: MatDialog, private doctorService: DoctorService) {}
 
@@ -73,4 +75,8 @@ export class DoctorComponent {
         this.addItem(result);
       });
   }
+
+  // showMoreDoctors() {
+
+  // }
 }
