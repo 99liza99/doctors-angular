@@ -1,6 +1,6 @@
 @font-face {
   font-family: "tiro.woff2";
-  src: url("/src/assets/tiro.woff2");
+  src: url("/assets/tiro.woff2");
 }
 h1 {
   font-family: "tiro.woff2";

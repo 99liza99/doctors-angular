@@ -54,6 +54,9 @@ export class PageAppointmentComponent {
   @Output() newItemEvent = new EventEmitter<Doctor>();
 
   onSubmit(form: FormGroup) {
+    const newAppoitment:Appoitment = form.value;
+    newAppoitment.gender = form.value.gender.name;
+    newAppoitment.doctor_id = form.value.doctor._id
     this.appoitmentService.addAppoitment(form.value).subscribe();
     this.newItemEvent.emit(form.value);
   }

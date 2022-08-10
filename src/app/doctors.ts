@@ -19,6 +19,7 @@ export interface Gender {
 export interface Appoitment {
   _id: string;
   name: string;
+  doctor_id: string;
   doctor: string;
   gender: string;
   picker: string;
