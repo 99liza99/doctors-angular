@@ -3,7 +3,7 @@ import { MatDialog } from '@angular/material/dialog';
 import { ModalComponent } from '../modal/modal.component';
 import { Doctor } from '../doctors';
 import { SPECIALIZAIONS } from '../doctors.const';
-import { first, filter } from 'rxjs/operators';
+import { first, filter, tap } from 'rxjs/operators';
 import { DoctorService } from '../doctor.service';
 import { Observable } from 'rxjs';
 import { ConfirmComponent } from '../confirm/confirm.component';
@@ -15,8 +15,10 @@ import { ConfirmComponent } from '../confirm/confirm.component';
 })
 export class DoctorComponent {
   doctors$: Observable<Doctor[]> = this.doctorService.doctorList$;
-  start: number = 3;
+  show: number = 3;
+  listLength = 0;
   end: number = 10;
+  hideButton = false;
 
   constructor(public dialog: MatDialog, private doctorService: DoctorService) {}
 
@@ -75,8 +77,21 @@ export class DoctorComponent {
         this.addItem(result);
       });
   }
-
-  // showMoreDoctors() {
-
-  // }
+  showMoreDoctors() {
+    this.doctors$.pipe(tap((v) => (this.listLength = v.length))).subscribe();
+    this.show = this.show + 3;
+    if (this.show > this.listLength) {
+      this.hideButton = true;
+    }
+  }
 }
+
+//    showMoreDoctors() <!-- {
+//     this.doctors$.pipe(
+//       tap(v => this.listLength = v.length)
+//     ).subscribe()     -   підписуємось, щоб дізнатись довжину масиву з докторами
+//     this.show = this.show + 3.  -  крок з яким лікарі будуть відображатись (спочатку перед конструктором show = 3)
+//     if (this.show > this.listLength) {
+//       this.hideButton = true. - додаткова умова, коли лікарів у масиві більше немає - додається [disabled] на кнопку і вона стає не активною
+//     } -->
+//    }

@@ -4,7 +4,7 @@
   </button>
 </div>
 <div class="cards">
-  <mat-card class="card" *ngFor="let doctor of doctors$ | async | slice:start:end">
+  <mat-card class="card" *ngFor="let doctor of doctors$ | async | slice:show">
     <a [routerLink]="['/appointment']" [queryParams]="{ doctorId: doctor._id }"
       ><mat-card-title-group>
         <mat-card-title>{{ doctor.name }}</mat-card-title>
@@ -30,5 +30,5 @@
     </button>
   </mat-card>
   </div>
-  <button mat-button>Read more...</button>
-
+  <button mat-button type="button" [disabled]="" (click)="showMoreDoctors()">Read more...</button>
+  
