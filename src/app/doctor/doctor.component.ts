@@ -81,9 +81,9 @@ export class DoctorComponent {
   showMoreDoctors() {
     this.doctors$.pipe(tap((v) => (this.listLength = v.length))).subscribe();
    
-    this.end += this.page + 3
+    this.end += this.page
      
-      if (this.end >= this.page ) {
+      if (this.end >= this.listLength ) {
         this.hideButtonNext = true;
       
        
