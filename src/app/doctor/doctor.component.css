@@ -1,6 +1,7 @@
 .cards {
   display: flex;
   flex-wrap: wrap;
+  
  }
 
 .cards .card {
@@ -11,7 +12,7 @@
 
 .cards .card a {
   text-decoration: none;
-  color: blueviolet;
+  color:#474444;
 }
 
 .card:hover {
@@ -31,4 +32,13 @@ button {
   margin-right: 0;
   display: block;
   margin-bottom: 10px;
+  
+  
+}
+.mat-button.mat-primary {
+  color: rgb(45, 44, 44);
+}
+.mat-button.mat-primary:hover {
+  color: white;
+  background: rgb(45, 44, 44);
 }

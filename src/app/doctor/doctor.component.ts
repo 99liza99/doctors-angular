@@ -20,7 +20,7 @@ export class DoctorComponent {
   page: number = 3;
   listLength: number = 0;
   hideButtonNext: boolean = false;
-  hideButtonPref: boolean = true;
+  
   constructor(public dialog: MatDialog, private doctorService: DoctorService) {}
 
   addItem(newItem: Doctor) {
@@ -78,27 +78,17 @@ export class DoctorComponent {
         this.addItem(result);
       });
   }
-  showMoreDoctors(isNext: boolean = true) {
+  showMoreDoctors() {
     this.doctors$.pipe(tap((v) => (this.listLength = v.length))).subscribe();
-    if (isNext === true) {
-      this.end += this.page;
-      this.show += this.page;
-      if (this.show + this.page >= this.listLength) {
+   
+    this.end += this.page + 3
+     
+      if (this.end >= this.page ) {
         this.hideButtonNext = true;
-      } else {
-        this.hideButtonNext = false;
+      
+       
       }
-      this.hideButtonPref = false;
-    } else {
-      this.end -= this.page;
-      this.show -= this.page;
-      if (this.show <= 0) {
-        this.hideButtonNext = false;
-        this.hideButtonPref = true;
-      } else {
-        this.hideButtonPref = false;
-      }
-    }
+   
   }
 }
 

@@ -4,7 +4,10 @@
   </button>
 </div>
 <div class="cards">
-  <mat-card class="card" *ngFor="let doctor of doctors$ | async | slice:show:end">
+  <mat-card
+    class="card"
+    *ngFor="let doctor of doctors$ | async | slice: show:end"
+  >
     <a [routerLink]="['/appointment']" [queryParams]="{ doctorId: doctor._id }"
       ><mat-card-title-group>
         <mat-card-title>{{ doctor.name }}</mat-card-title>
@@ -17,20 +20,26 @@
         </p>
       </mat-card-content>
       <mat-card-content>
-        <p>
-          {{ doctor.age }} <span>&nbsp; y. o.</span>
-        </p>
+        <p>{{ doctor.age }} <span>&nbsp; y. o.</span></p>
       </mat-card-content>
-      <mat-card-actions align="end">
-       
-      </mat-card-actions>
+      <mat-card-actions align="end"> </mat-card-actions>
     </a>
-    <button mat-button title="Delete" (click)="openConfirm('0ms', '0ms', doctor._id)">
+    <button
+      mat-button
+      title="Delete"
+      (click)="openConfirm('0ms', '0ms', doctor._id)"
+    >
       <i class="fa-solid fa-trash-can"></i>
     </button>
   </mat-card>
-  </div>
- <button mat-button type="button" [disabled]="hideButtonPref" (click)="showMoreDoctors(false)">Back</button> 
- <button mat-button type="button" color="primary" [disabled]="hideButtonNext" (click)="showMoreDoctors()">Next doctors</button>
+</div>
 
-  
+<button
+  mat-button
+  type="button"
+  color="primary"
+  [disabled]="hideButtonNext"
+  (click)="showMoreDoctors()"
+>
+  Next doctors
+</button>

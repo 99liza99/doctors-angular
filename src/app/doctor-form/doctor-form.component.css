@@ -2,6 +2,7 @@
     max-width: 400px;
     padding: 10px;
     border: 1px solid gray;
+   
 }
 input, textarea, select, mat-form-field{
     width: 100%;
