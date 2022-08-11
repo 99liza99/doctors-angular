@@ -15,11 +15,12 @@ import { ConfirmComponent } from '../confirm/confirm.component';
 })
 export class DoctorComponent {
   doctors$: Observable<Doctor[]> = this.doctorService.doctorList$;
-  show: number = 3;
-  listLength = 0;
-  end: number = 10;
-  hideButton = false;
-
+  show: number = 0;
+  end: number = 3;
+  page: number = 3;
+  listLength: number = 0;
+  hideButtonNext: boolean = false;
+  hideButtonPref: boolean = true;
   constructor(public dialog: MatDialog, private doctorService: DoctorService) {}
 
   addItem(newItem: Doctor) {
@@ -77,11 +78,26 @@ export class DoctorComponent {
         this.addItem(result);
       });
   }
-  showMoreDoctors() {
+  showMoreDoctors(isNext: boolean = true) {
     this.doctors$.pipe(tap((v) => (this.listLength = v.length))).subscribe();
-    this.show = this.show + 3;
-    if (this.show > this.listLength) {
-      this.hideButton = true;
+    if (isNext === true) {
+      this.end += this.page;
+      this.show += this.page;
+      if (this.show + this.page >= this.listLength) {
+        this.hideButtonNext = true;
+      } else {
+        this.hideButtonNext = false;
+      }
+      this.hideButtonPref = false;
+    } else {
+      this.end -= this.page;
+      this.show -= this.page;
+      if (this.show <= 0) {
+        this.hideButtonNext = false;
+        this.hideButtonPref = true;
+      } else {
+        this.hideButtonPref = false;
+      }
     }
   }
 }
