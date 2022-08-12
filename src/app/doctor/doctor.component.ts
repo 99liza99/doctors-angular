@@ -92,12 +92,4 @@ export class DoctorComponent {
   }
 }
 
-//    showMoreDoctors() <!-- {
-//     this.doctors$.pipe(
-//       tap(v => this.listLength = v.length)
-//     ).subscribe()     -   підписуємось, щоб дізнатись довжину масиву з докторами
-//     this.show = this.show + 3.  -  крок з яким лікарі будуть відображатись (спочатку перед конструктором show = 3)
-//     if (this.show > this.listLength) {
-//       this.hideButton = true. - додаткова умова, коли лікарів у масиві більше немає - додається [disabled] на кнопку і вона стає не активною
-//     } -->
-//    }
+

@@ -24,21 +24,22 @@
       </mat-card-content>
       <mat-card-actions align="end"> </mat-card-actions>
     </a>
-    <button
-      mat-button
-      title="Delete"
-      (click)="openConfirm('0ms', '0ms', doctor._id)"
-    >
-      <i class="fa-solid fa-trash-can"></i>
-    </button>
-    <button
-      mat-button
-      title="Update"
-      (click)="openDialog('0ms', '0ms', doctor)"
-
-    > 
-      <i class="fa-solid fa-pen-to-square"></i>
-    </button>
+    <mat-card-actions align="end">
+      <button
+        mat-button
+        title="Update"
+        (click)="openDialog('0ms', '0ms', doctor)"
+      >
+        <i class="fa-solid fa-pen-to-square"></i>
+      </button>
+      <button
+        mat-button
+        title="Delete"
+        (click)="openConfirm('0ms', '0ms', doctor._id)"
+      >
+        <i class="fa-solid fa-trash-can"></i>
+      </button>
+    </mat-card-actions>
   </mat-card>
 </div>
 

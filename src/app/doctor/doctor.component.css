@@ -51,4 +51,7 @@ button {
   color: white;
   background: rgb(45, 44, 44);
 }
+.mat-card-actions {
+  display: flex;
+}
 
