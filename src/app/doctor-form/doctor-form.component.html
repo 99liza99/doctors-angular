@@ -43,9 +43,9 @@
       formControlName="age"
     />
   </mat-form-field>
-  <mat-card-actions align="end">
-    <button type="submit">Close</button>
+  <mat-card-actions>
+    <button mat-raised-button >Close</button>
   
-  <button type="submit" [disabled]="!doctorForm.valid">Save</button>
+  <button mat-raised-button type="submit" [disabled]="!doctorForm.valid">Save</button>
 </mat-card-actions>
 </form>

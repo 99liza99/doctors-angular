@@ -1,10 +1,17 @@
 .doctor_form {
-    max-width: 400px;
-    padding: 10px;
-    border: 1px solid gray;
-   
+  max-width: 400px;
+  padding: 10px;
+  border: 1px solid gray;
 }
-input, textarea, select, mat-form-field{
-    width: 100%;
-    box-sizing: border-box;
+input,
+textarea,
+select,
+mat-form-field {
+  width: 100%;
+  box-sizing: border-box;
+}
+.mat-card-actions {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
 }
