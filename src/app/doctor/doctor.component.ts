@@ -11,13 +11,13 @@ import { ConfirmComponent } from '../confirm/confirm.component';
 @Component({
   selector: 'app-doctor',
   templateUrl: './doctor.component.html',
-  styleUrls: ['./doctor.component.css'],
+  styleUrls: ['./doctor.component.scss'],
 })
 export class DoctorComponent {
   doctors$: Observable<Doctor[]> = this.doctorService.doctorList$;
   show: number = 0;
-  end: number = 3;
-  page: number = 3;
+  end: number = 4;
+  page: number = 4;
   listLength: number = 0;
   hideButtonNext: boolean = false;
   doctor: Doctor | undefined = undefined;

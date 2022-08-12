@@ -11,7 +11,7 @@ import { Doctor } from '../doctors';
 @Component({
   selector: 'app-dialog',
   templateUrl: './modal.component.html',
-  styleUrls: ['./modal.component.css'],
+  styleUrls: ['./modal.component.scss'],
 })
 export class ModalComponent {
   

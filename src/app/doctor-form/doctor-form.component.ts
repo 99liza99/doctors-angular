@@ -8,7 +8,7 @@ import { DoctorService } from '../doctor.service';
 @Component({
   selector: 'app-doctor-form',
   templateUrl: './doctor-form.component.html',
-  styleUrls: ['./doctor-form.component.css'],
+  styleUrls: ['./doctor-form.component.scss'],
 })
 export class DoctorFormComponent implements OnInit {
   doctorForm = this.fb.group({

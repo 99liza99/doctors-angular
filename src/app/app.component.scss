@@ -1,0 +1,47 @@
+$black-color: black;
+$second-color: orange;
+
+@font-face {
+  font-family: "tiro.woff2";
+  src: url("/assets/tiro.woff2");
+}
+header {
+  background-color: $black-color;
+  display: flex;
+
+  .title {
+    display: flex;
+    justify-content: center;
+
+    a {
+      text-decoration: none;
+
+      h1 {
+        font-family: "tiro.woff2";
+        color: $second-color;
+      }
+    }
+
+    img {
+      width: 70px;
+      height: 70px;
+      padding: 10px;
+    }
+  }
+
+  nav .links {
+    margin-bottom: 25px;
+    display: flex;
+    justify-content: space-around;
+    padding: 20px;
+  }
+  nav .links p a {
+    font-family: "tiro.woff2";
+    font-size: 20px;
+    text-decoration: none;
+    color: white;
+  }
+  nav .links p a:hover {
+    text-decoration: underline;
+  }
+}

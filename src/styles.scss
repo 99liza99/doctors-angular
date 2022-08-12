@@ -7,7 +7,7 @@ h1 {
 }
 
 body {
-  margin: 2em;
+  margin: 0;
 }
 body,
 input[type="text"],
@@ -39,6 +39,6 @@ button:disabled {
 
 /* everywhere else */
 * {
-  // color: #333;
+  
   font-family: 'tiro.woff2';
 }

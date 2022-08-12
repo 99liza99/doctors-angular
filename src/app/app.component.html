@@ -1,8 +1,15 @@
-<h1>{{ title }}</h1>
-<nav>
-  
-    <p><a routerLink="/doctors">Doctors</a></p>
-   <p><a routerLink="/appointment">Appointment with a doctor</a></p> 
- 
-</nav>
+<header>
+  <div class="title">
+    <a routerLink="/doctors">
+      <h1>{{ title }}</h1>
+    </a>
+    <img src="/assets/images/medic.png" alt="" />
+  </div>
+  <nav>
+    <div class="links">
+      <p><a routerLink="/appointment">Appointment with a doctor</a></p>
+      <p><a routerLink="/all-appointments">All appoitments to doctors</a></p>
+    </div>
+  </nav>
+</header>
 <router-outlet></router-outlet>

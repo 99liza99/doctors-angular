@@ -34,4 +34,8 @@
 a {
   color: #474444; 
   font-size: 20px;
+  text-decoration: none;
+}
+a:hover {
+    text-decoration: underline;
 }
