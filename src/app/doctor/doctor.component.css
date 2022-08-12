@@ -35,10 +35,20 @@ button {
   
   
 }
-.mat-button.mat-primary {
+.mat-fab.mat-primary {
   color: rgb(45, 44, 44);
 }
 .mat-button.mat-primary:hover {
   color: white;
   background: rgb(45, 44, 44);
+} 
+.mat-raised-button {
+  background: white;
+  color: rgb(45, 44, 44);
+
 }
+.mat-raised-button:hover {
+  color: white;
+  background: rgb(45, 44, 44);
+}
+

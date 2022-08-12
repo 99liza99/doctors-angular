@@ -2,8 +2,8 @@ import {
   Component,
   Output,
   EventEmitter,
-  TemplateRef,
-  AfterViewInit,
+  TemplateRef
+ 
 } from '@angular/core';
 import { DoctorService } from '../doctor.service';
 import { Doctor, Gender, Appoitment } from '../doctors';

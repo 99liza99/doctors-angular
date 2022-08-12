@@ -3,10 +3,15 @@
     <p>
       <mat-form-field class="example-full-width" appearance="fill">
         <mat-label>Name:</mat-label>
-        <input type="text" pattern="[a-zA-Z ]*" matInput formControlName="name" />
+        <input
+          type="text"
+          pattern="[a-zA-Z ]*"
+          matInput
+          formControlName="name"
+        />
       </mat-form-field>
     </p>
-  
+
     <p>
       <mat-form-field appearance="fill">
         <mat-label>Choose a doctor</mat-label>
@@ -17,7 +22,7 @@
         </mat-select>
       </mat-form-field>
     </p>
-  
+
     <p>
       <mat-form-field appearance="fill">
         <mat-label>Gender:</mat-label>
@@ -28,7 +33,7 @@
         </mat-select>
       </mat-form-field>
     </p>
-  
+
     <p>
       <mat-form-field appearance="fill">
         <mat-label>Choose a date</mat-label>
@@ -38,7 +43,7 @@
         <mat-datepicker #picker></mat-datepicker>
       </mat-form-field>
     </p>
-  
+
     <p>
       <mat-form-field class="example-full-width" appearance="fill">
         <mat-label>Comment</mat-label>
@@ -53,7 +58,7 @@
         ></textarea>
       </mat-form-field>
     </p>
-  
+
     <button
       type="submit"
       [disabled]="!doctorForm.valid"
@@ -69,9 +74,8 @@
       </div>
     </ng-template>
   </form>
-  
+
   <app-card-doctor [doctor]="selectedDoctor"></app-card-doctor>
-  
-  
 </div>
- <app-table></app-table> 
+
+<a routerLink="/all-appointments">All appoitments to doctors</a>
