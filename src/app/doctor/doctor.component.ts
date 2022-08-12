@@ -20,6 +20,7 @@ export class DoctorComponent {
   page: number = 3;
   listLength: number = 0;
   hideButtonNext: boolean = false;
+  doctor: Doctor[] | undefined = undefined;
   
   constructor(public dialog: MatDialog, private doctorService: DoctorService) {}
 
@@ -42,6 +43,7 @@ export class DoctorComponent {
       width: '250px',
       enterAnimationDuration,
       exitAnimationDuration,
+      
     });
     dialogRef
       .afterClosed()
@@ -61,12 +63,14 @@ export class DoctorComponent {
 
   openDialog(
     enterAnimationDuration: string,
-    exitAnimationDuration: string
+    exitAnimationDuration: string,
+    doctor: Doctor | undefined = undefined
   ): void {
     const dialogRef = this.dialog.open(ModalComponent, {
       width: '400px',
       enterAnimationDuration,
       exitAnimationDuration,
+      data: doctor,
     });
     dialogRef
       .afterClosed()
