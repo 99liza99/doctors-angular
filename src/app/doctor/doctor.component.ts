@@ -20,18 +20,18 @@ export class DoctorComponent {
   page: number = 3;
   listLength: number = 0;
   hideButtonNext: boolean = false;
-  doctor: Doctor[] | undefined = undefined;
-  
+  doctor: Doctor | undefined = undefined;
+
   constructor(public dialog: MatDialog, private doctorService: DoctorService) {}
 
-  addItem(newItem: Doctor) {
-    const spec = SPECIALIZAIONS.find(
-      (elemet) => elemet.id === Number(newItem.specialization)
-    )!;
-    newItem.img = 'assets/images/d1.jpg';
-    newItem.specialization = spec.value;
+  addItem(newDoctor: Doctor) {
+    newDoctor.img = 'assets/images/d1.jpg';
 
-    this.doctorService.addDoctor(newItem).subscribe();
+    if (newDoctor._id.length > 0) {
+      this.doctorService.updateDoctor(newDoctor).subscribe();
+    } else {
+      this.doctorService.addDoctor(newDoctor).subscribe();
+    }
   }
 
   openConfirm(
@@ -43,7 +43,6 @@ export class DoctorComponent {
       width: '250px',
       enterAnimationDuration,
       exitAnimationDuration,
-      
     });
     dialogRef
       .afterClosed()
@@ -84,15 +83,12 @@ export class DoctorComponent {
   }
   showMoreDoctors() {
     this.doctors$.pipe(tap((v) => (this.listLength = v.length))).subscribe();
-   
-    this.end += this.page
-     
-      if (this.end >= this.listLength ) {
-        this.hideButtonNext = true;
-      
-       
-      }
-   
+
+    this.end += this.page;
+
+    if (this.end >= this.listLength) {
+      this.hideButtonNext = true;
+    }
   }
 }
 

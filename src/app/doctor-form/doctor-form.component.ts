@@ -1,4 +1,4 @@
-import { Component, OnInit, Output, EventEmitter, Injectable } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter, Injectable, Input } from '@angular/core';
 import { Validators } from '@angular/forms';
 import { Doctor, Specialization } from '../doctors';
 import { SPECIALIZAIONS } from '../doctors.const';
@@ -12,18 +12,24 @@ import { DoctorService } from '../doctor.service';
 })
 export class DoctorFormComponent implements OnInit {
   doctorForm = this.fb.group({
+    _id: [''],
     name: ['', [Validators.required, Validators.pattern('[A-Z][a-z ]*')]],
     specialization: ['', Validators.required],
     description: ['', Validators.required],
-    age: ['', Validators.required],
+    age: ['', Validators.required] as any
   });
 
   specialization: Specialization[] = SPECIALIZAIONS;
   @Output() newItemEvent = new EventEmitter<Doctor>();
+  @Input() doctor: Doctor | undefined;
 
   constructor(private fb: FormBuilder, private doctorService: DoctorService) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    if (this.doctor) {
+      this.doctorForm.patchValue(this.doctor)
+    }
+  }
 
   onSubmit(form: FormGroup) {
     this.newItemEvent.emit(form.value);

@@ -1,5 +1,9 @@
 import { Component} from '@angular/core';
-import {MatDialog,MatDialogRef,} from '@angular/material/dialog';
+import {MatDialog,MatDialogRef, MAT_DIALOG_DATA} from '@angular/material/dialog';
+import { Inject } from '@angular/core';
+import { Doctor } from '../doctors';
+
+
 
 
   
@@ -15,6 +19,7 @@ export class ModalComponent {
   constructor(
     public dialogRef: MatDialogRef<ModalComponent>,
     public dialog: MatDialog, 
+    @Inject(MAT_DIALOG_DATA) public  data: Doctor | undefined ,
   ) {}
 
 

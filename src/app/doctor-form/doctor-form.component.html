@@ -13,7 +13,7 @@
   <mat-form-field class="example-full-width" appearance="fill">
     <mat-label>Specialization</mat-label>
     <mat-select formControlName="specialization">
-      <mat-option *ngFor="let spec of specialization" [value]="spec.id">
+      <mat-option *ngFor="let spec of specialization" [value]="spec.value">
         {{ spec.value }}
       </mat-option>
     </mat-select>
@@ -44,8 +44,13 @@
     />
   </mat-form-field>
   <mat-card-actions>
-    <button mat-raised-button >Close</button>
-  
-  <button mat-raised-button type="submit" [disabled]="!doctorForm.valid">Save</button>
-</mat-card-actions>
+    <button mat-raised-button>Close</button>
+
+    <button mat-raised-button type="submit" [disabled]="!doctorForm.valid">
+      Save
+    </button>
+  </mat-card-actions>
+  <div *ngIf="doctor">
+    <input type="hidden" formControlName="_id" />
+  </div>
 </form>

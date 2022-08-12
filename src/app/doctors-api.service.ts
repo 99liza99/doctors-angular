@@ -16,6 +16,9 @@ export class DoctorsApiService {
   addDoctor(newDoctor: Doctor): Observable<Doctor> {
     return this.http.post<Doctor>('http://localhost:3000/doctors/', newDoctor);
   }
+  updateDoctor(doctor: Doctor): Observable<Doctor> {
+    return this.http.put<Doctor>('http://localhost:3000/doctors/', doctor);
+  }
 
   deleteDoctor(_id: String): Observable<Doctor> {
     return this.http.delete<Doctor>('http://localhost:3000/doctors/'+_id);

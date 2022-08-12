@@ -40,6 +40,19 @@ export class DoctorService {
         )
       );
   }
+  updateDoctor( doctor: Doctor) {
+    return this.doctorsApiService
+    .updateDoctor(doctor)
+    .pipe(
+      tap(
+        (doctor) =>
+        this.doctorList.next([
+          ...this.doctorList.value
+          
+        ])
+      )
+    )
+  }
 
   deleteDoctor(id: String) {
     return this.doctorsApiService
