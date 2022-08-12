@@ -40,18 +40,15 @@ export class DoctorService {
         )
       );
   }
-  updateDoctor( doctor: Doctor) {
+  updateDoctor(doctor: Doctor): Observable<Doctor> {
     return this.doctorsApiService
-    .updateDoctor(doctor)
-    .pipe(
-      tap(
-        (doctor) =>
-        this.doctorList.next([
-          ...this.doctorList.value
-          
-        ])
-      )
-    )
+      .updateDoctor(doctor)
+      .pipe(
+        tap((updetedDoctor) =>
+          this.doctorList.next({ ...this.doctorList.value, ...updetedDoctor })
+          // ...updetedDoctor (for update doctor , NOT CHANGE!)
+        )
+      );
   }
 
   deleteDoctor(id: String) {
