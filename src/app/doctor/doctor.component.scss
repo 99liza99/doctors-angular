@@ -27,3 +27,14 @@
   font-weight: bold;
   color: black;
 }
+.main {
+  margin: auto;
+  display: block;
+  color: black;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+.main:hover {
+  background: #fda95b;
+  color: white;
+}

@@ -1,45 +1,52 @@
 .container {
-    display: flex;
-    justify-content: space-between;
-    max-width: 1024px;
-    margin: auto;
+  display: flex;
+  justify-content: space-between;
+  max-width: 1024px;
+  margin: auto;
 
-    form, app-card-doctor {
-        width: 50%;
-        margin: 10px;
-    }
-    form {
-       
-        padding: 10px;
-        
-    }
-    input, textarea, select, mat-form-field{
-       width: 100%;
-        box-sizing: border-box;
-    }
-    
-   
-    
+  form,
+  app-card-doctor {
+    width: 50%;
+    margin: 10px;
+  }
+  form {
+    padding: 10px;
+  }
+  input,
+  textarea,
+  select,
+  mat-form-field {
+    width: 100%;
+    box-sizing: border-box;
+  }
 }
 
 .snackbar {
-    text-align: center;
-    
+  text-align: center;
 
-    span {
-        color: whitesmoke;
-    }
+  span {
+    color: whitesmoke;
+  }
 
-    .fa-solid {
-        color: green;
-        padding: 5px;
-    }
+  .fa-solid {
+    color: green;
+    padding: 5px;
+  }
 }
 a {
-  color: black; 
+  color: black;
   font-size: 20px;
   text-decoration: none;
 }
 a:hover {
-    text-decoration: underline;
+  text-decoration: underline;
+}
+.app :disabled {
+  background-color: #eee;
+  color: #aaa;
+  cursor: auto;
+}
+.app:hover {
+    background: #fda95b;
+    color: white;
 }
