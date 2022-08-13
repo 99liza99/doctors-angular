@@ -14,52 +14,16 @@
 }
 .cards .card a {
   text-decoration: none;
-  color: #474444;
+  color: black;
 }
 
 .card:hover {
-  border: 2px solid orange;
+  border: 2px solid #fda95b;
 }
 .card p {
-  color: #474444;
+  color: black;
 }
 .card .name {
   font-weight: bold;
-  color: #474444;
-}
-
-button {
-  margin-left: auto;
-  margin-right: 0;
-  display: block;
-  margin-bottom: 10px;
-}
-.mat-fab.mat-primary {
-  color: #474444;
-}
-.mat-button.mat-primary:hover {
-  color: white;
-  background: #474444;
-}
-.mat-raised-button {
-  background: white;
-  color: #474444;
-}
-.mat-raised-button:hover {
-  color: white;
-  background: #474444;
-}
-.mat-card-actions {
-  display: flex;
-}
-.mat-button {
-  color: #474444;
-}
-.mat-button:hover {
-  background: #474444;
-  color: white;
-}
-.mat-card-sm-image {
-  width: 80px;
-  height: auto;
+  color: black;
 }

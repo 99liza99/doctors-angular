@@ -9,7 +9,7 @@
         margin: 10px;
     }
     form {
-        border: 1px solid gray;
+       
         padding: 10px;
         
     }
@@ -17,10 +17,14 @@
        width: 100%;
         box-sizing: border-box;
     }
+    
+   
+    
 }
 
 .snackbar {
     text-align: center;
+    
 
     span {
         color: whitesmoke;
@@ -32,7 +36,7 @@
     }
 }
 a {
-  color: #474444; 
+  color: black; 
   font-size: 20px;
   text-decoration: none;
 }

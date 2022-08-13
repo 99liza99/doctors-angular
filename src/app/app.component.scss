@@ -1,12 +1,11 @@
-$black-color: black;
-$second-color: orange;
+
 
 @font-face {
   font-family: "tiro.woff2";
   src: url("/assets/tiro.woff2");
 }
 header {
-  background-color: $black-color;
+  background-color: black;
   display: flex;
 
   .title {
@@ -18,21 +17,22 @@ header {
 
       h1 {
         font-family: "tiro.woff2";
-        color: $second-color;
+        color: #fda95b;
       }
     }
 
     img {
-      width: 70px;
-      height: 70px;
-      padding: 10px;
+      width: 60px;
+      height: 60px;
+     padding: 20px;
     }
   }
 
   nav .links {
-    margin-bottom: 25px;
+    
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
+    align-items: center;
     padding: 20px;
   }
   nav .links p a {
@@ -40,8 +40,11 @@ header {
     font-size: 20px;
     text-decoration: none;
     color: white;
+    padding: 50px;
   }
   nav .links p a:hover {
     text-decoration: underline;
+    color: #fda95b;
   }
 }
+

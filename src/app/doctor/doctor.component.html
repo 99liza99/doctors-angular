@@ -1,5 +1,9 @@
 <div class="container">
-  <button mat-raised-button (click)="openDialog('0ms', '0ms')">
+  <button
+    mat-raised-button
+    class="main"
+    (click)="openDialog('0ms', '0ms')"
+  >
     Add Doctor
   </button>
 </div>
@@ -26,13 +30,15 @@
     </a>
     <mat-card-actions align="end">
       <button
+      class="true"
         mat-button
-        title="Update"
+        title="Edit"
         (click)="openDialog('0ms', '0ms', doctor)"
       >
         <i class="fa-solid fa-pen-to-square"></i>
       </button>
       <button
+        class="false"
         mat-button
         title="Delete"
         (click)="openConfirm('0ms', '0ms', doctor._id)"
@@ -45,8 +51,8 @@
 
 <button
   mat-raised-button
+  class="main"
   type="button"
-  color="primary"
   [disabled]="hideButtonNext"
   (click)="showMoreDoctors()"
 >
