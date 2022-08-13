@@ -25,25 +25,21 @@ button:disabled {
 * {
   font-family: "tiro.woff2";
 }
-.true {
-  color: black;
-}
-.true:hover {
-  background: #fda95b;
-  color: white;
-}
-.false {
-  color: #fda95b;
-}
-.false:hover {
-  background: #fda95b;
-  color: white;
-}
-.main {
-  margin: auto;
-  color: black;
-}
-.main:hover {
-  background: #fda95b;
-  color: white;
-}
+
+  .true {
+    color: black;
+  }
+  .true:hover {
+    background: #fda95b;
+    color: white;
+  }
+  .false {
+    color: #fda95b;
+  }
+  .false:hover {
+    background: #fda95b;
+    color: white;
+  }
+  
+  
+
