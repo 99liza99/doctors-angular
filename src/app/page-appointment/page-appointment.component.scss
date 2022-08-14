@@ -42,12 +42,8 @@ a {
 a:hover {
   text-decoration: underline;
 }
-.app :disabled {
-  background-color: #eee;
-  color: #aaa;
-  cursor: auto;
-}
-.app:hover {
-  background: #fda95b;
+
+.app:hover:not([disabled="true"]) {
+  background: black;
   color: white;
 }
