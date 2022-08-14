@@ -15,31 +15,23 @@ input[type="text"] {
   font-family: Cambria, Georgia, serif;
 }
 
-button:disabled {
-  background-color: #eee;
-  color: #aaa;
-  cursor: auto;
-}
-
 /* everywhere else */
 * {
   font-family: "tiro.woff2";
 }
+button {
+  transition: 0.35s;
+}
+.true {
+  color: black;
+}
+.true:hover:not([disabled="true"]) {
+  background: black;
+  color: white !important;
+}
 
-  .true {
-    color: black;
-  }
-  .true:hover {
-    background: #fda95b;
-    color: white;
-  }
-  .false {
-    color: #fda95b;
-  }
-  .false:hover {
-    background: #fda95b;
-    color: white;
-  }
-  
-  
+.false:hover {
+  background: #f44336;
+  color: white  ;
+}
 

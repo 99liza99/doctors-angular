@@ -2,40 +2,47 @@
   display: grid;
   font-size: 0;
   grid-template-columns: 25% 25% 25% 25%;
-  
+
   @media screen and (max-width: 1024px) {
     grid-template-columns: 50% 50%;
   }
 }
 
-.cards .card {
-  flex-grow: 1;
-  margin: 10px;
-}
-.cards .card a {
-  text-decoration: none;
-  color: black;
+.cards {
+  .card {
+    flex-grow: 1;
+    margin: 10px;
+
+    a {
+      text-decoration: none;
+      color: black;
+    }
+
+    &:hover {
+      outline: 2px solid #fda95b;
+    }
+
+    p {
+      color: black;
+    }
+
+    .name {
+      font-weight: bold;
+      color: black;
+    }
+  }
 }
 
-.card:hover {
-  border: 2px solid #fda95b;
-}
-.card p {
-  color: black;
-}
-.card .name {
-  font-weight: bold;
-  color: black;
-}
 .main {
   margin: auto;
   display: block;
   color: black;
   margin-top: 20px;
   margin-bottom: 20px;
+  border-radius: 25px;
 }
-.main:hover {
-  background: #fda95b;
+.main:hover:not([disabled="true"]) {
+  background: black;
   color: white;
 }
 .mat-card-actions {

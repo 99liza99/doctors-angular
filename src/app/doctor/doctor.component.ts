@@ -82,7 +82,13 @@ export class DoctorComponent {
       });
   }
   showMoreDoctors() {
-    this.doctors$.pipe(tap((v) => (this.listLength = v.length))).subscribe();
+
+    this.doctors$.pipe(tap((v) => {
+      this.listLength = v.length;
+      if (this.listLength > this.end){
+        this.hideButtonNext = false;
+      }
+    })).subscribe();
 
     this.end += this.page;
 

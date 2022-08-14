@@ -6,7 +6,7 @@
   <p>Add new doctor</p>
 
   <mat-form-field class="example-full-width" appearance="fill">
-    <mat-label>Name, Surename:</mat-label>
+    <mat-label>Name</mat-label>
     <input type="text" pattern="[a-zA-Z ]*" matInput formControlName="name" />
   </mat-form-field>
 
@@ -44,9 +44,9 @@
     />
   </mat-form-field>
   <mat-card-actions>
-    <button mat-raised-button class="false">Close</button>
+    <button mat-stroked-button color="warn" class="false">Close</button>
 
-    <button mat-raised-button class="true" type="submit" [disabled]="!doctorForm.valid">
+    <button mat-stroked-button class="true" type="submit" [disabled]="!doctorForm.valid">
       Save
     </button>
   </mat-card-actions>
