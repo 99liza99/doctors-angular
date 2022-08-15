@@ -51,14 +51,11 @@ export class PageAppointmentComponent {
     private route: ActivatedRoute
   ) {}
 
-  @Output() newItemEvent = new EventEmitter<Doctor>();
-
   onSubmit(form: FormGroup) {
     const newAppoitment:Appoitment = form.value;
     newAppoitment.gender = form.value.gender.name;
     newAppoitment.doctor_id = form.value.doctor._id
     this.appoitmentService.addAppoitment(form.value).subscribe();
-    this.newItemEvent.emit(form.value);
   }
   openSnackBar(templateRef: TemplateRef<any>) {
     this._snackBar.openFromTemplate(templateRef, {
