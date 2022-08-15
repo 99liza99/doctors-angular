@@ -36,7 +36,7 @@ export class DoctorService {
             this.doctorList.next([
               ...this.doctorList.value,
               doctor,
-            ]) /** Add new doctor for our lisr docotrs */
+            ]) /** Add new doctor for our list docotrs */
         )
       );
   }
