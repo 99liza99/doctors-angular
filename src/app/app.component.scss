@@ -38,18 +38,20 @@ header {
     padding: 20px;
     margin-top: 15px;
     font-size: 20px;
+
+   p a {
+      font-family: "tiro.woff2";
+      font-size: 20px;
+      text-decoration: none;
+      color: white;
+      padding: 50px;
+    }
+    p a:hover {
+      text-decoration: underline;
+      color: #fda95b;
+      transition: 0.35s;
+    }
   }
-  nav .links p a {
-    font-family: "tiro.woff2";
-    font-size: 20px;
-    text-decoration: none;
-    color: white;
-    padding: 50px;
-  }
-  nav .links p a:hover {
-    text-decoration: underline;
-    color: #fda95b;
-    transition: 0.35s;
-  }
+   
 }
 

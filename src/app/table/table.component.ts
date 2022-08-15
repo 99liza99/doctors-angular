@@ -9,7 +9,7 @@ import { ConfirmComponent } from '../confirm/confirm.component';
 @Component({
   selector: 'app-table',
   templateUrl: './table.component.html',
-  styleUrls: ['./table.component.css']
+  styleUrls: ['./table.component.scss']
 })
 export class TableComponent implements OnInit {
   appoitments: Observable<Appoitment[]> = this.appoitmentService.appoitmentList;
