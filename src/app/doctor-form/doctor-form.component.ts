@@ -13,12 +13,12 @@ import { DoctorService } from '../doctor.service';
 export class DoctorFormComponent implements OnInit {
   doctorForm = this.fb.group({
     _id: [''],
-    name: ['', [Validators.required, Validators.pattern('[a-zA-Z ]*')]],
+    name: ['', [Validators.required, Validators.pattern('[A-Z][a-z]*')]],
     specialization: ['', Validators.required],
     description: ['', Validators.required],
     age: ['', Validators.required] as any
   });
-
+  
   specialization: Specialization[] = SPECIALIZAIONS;
   @Output() newItemEvent = new EventEmitter<Doctor>();
   @Input() doctor: Doctor | undefined;

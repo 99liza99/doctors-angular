@@ -8,6 +8,7 @@
   <mat-form-field class="example-full-width" appearance="fill">
     <mat-label>Name</mat-label>
     <input type="text" pattern="[a-zA-Z ]*" matInput formControlName="name" />
+    <mat-error *ngIf="doctorForm.invalid">Name is not valid</mat-error>
   </mat-form-field>
 
   <mat-form-field class="example-full-width" appearance="fill">
@@ -17,6 +18,7 @@
         {{ spec.value }}
       </mat-option>
     </mat-select>
+    <mat-error *ngIf="doctorForm.invalid">Please select specialization</mat-error>
   </mat-form-field>
 
   <mat-form-field class="example-full-width" appearance="fill">
@@ -30,6 +32,7 @@
       cols="30"
       rows="10"
     ></textarea>
+    <mat-error *ngIf="doctorForm.invalid">Description is not valid</mat-error>
   </mat-form-field>
 
   <mat-form-field class="example-full-width" appearance="fill">
@@ -42,6 +45,7 @@
       max="100"
       formControlName="age"
     />
+    <mat-error *ngIf="doctorForm.invalid">Age is not valid</mat-error>
   </mat-form-field>
   <mat-card-actions>
     <button mat-stroked-button color="warn" class="false">Close</button>

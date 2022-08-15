@@ -57,7 +57,7 @@ export class DoctorComponent {
       });
   }
   deleteItem(_id: String) {
-    this.doctorService.deleteDoctor(_id).subscribe();
+    this.doctorService.deleteDoctor(_id).subscribe()
   }
 
   openDialog(
