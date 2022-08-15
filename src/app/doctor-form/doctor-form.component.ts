@@ -13,7 +13,7 @@ import { DoctorService } from '../doctor.service';
 export class DoctorFormComponent implements OnInit {
   doctorForm = this.fb.group({
     _id: [''],
-    name: ['', [Validators.required, Validators.pattern('[A-Z][a-z]*')]],
+    name: ['', [Validators.required, Validators.pattern('([A-Z][a-z]).*')]],
     specialization: ['', Validators.required],
     description: ['', Validators.required],
     age: ['', Validators.required] as any

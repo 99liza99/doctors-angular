@@ -22,7 +22,7 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class PageAppointmentComponent {
   doctorForm = this.fb.group({
-    name: ['', [Validators.required, Validators.pattern('[A-Z][a-z ]*')]],
+    name: ['', [Validators.required, Validators.pattern('([A-Z][a-z]).*')]],
     doctor: ['', Validators.required],
     picker: ['', Validators.required],
     gender: ['', Validators.required],
