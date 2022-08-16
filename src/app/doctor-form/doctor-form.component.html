@@ -48,7 +48,7 @@
     <mat-error *ngIf="doctorForm.invalid">Age must be between 18 and 100 inclusive</mat-error>
   </mat-form-field>
   <mat-card-actions>
-    <button mat-stroked-button color="warn" class="false">Close</button>
+    <button mat-stroked-button color="warn" class="false" mat-dialog-close>Close</button>
 
     <button mat-stroked-button class="true" type="submit" [disabled]="!doctorForm.valid">
       Save
