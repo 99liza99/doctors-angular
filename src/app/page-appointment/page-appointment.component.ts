@@ -60,7 +60,7 @@ export class PageAppointmentComponent {
   openSnackBar(templateRef: TemplateRef<any>) {
     this._snackBar.openFromTemplate(templateRef, {
       verticalPosition: 'top',
-      duration: 3000,
+      duration: 2000,
     });
   }
 }
