@@ -1,14 +1,11 @@
 import {
   Component,
-  Output,
-  EventEmitter,
   TemplateRef
- 
 } from '@angular/core';
 import { DoctorService } from '../doctor.service';
 import { Doctor, Gender, Appoitment } from '../doctors';
 import { Observable } from 'rxjs';
-import { debounceTime, first, takeUntil, tap } from 'rxjs/operators';
+import { tap } from 'rxjs/operators';
 import { FormGroup, Validators, FormBuilder } from '@angular/forms';
 import { GENDER } from '../doctors.const';
 import { MatSnackBar } from '@angular/material/snack-bar';

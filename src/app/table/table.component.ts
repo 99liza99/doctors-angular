@@ -3,7 +3,7 @@ import {  AppoitmentService  } from '../appoitment.service';
 import { Appoitment, Doctor } from '../doctors';
 import { Observable } from 'rxjs';
 import { first, filter } from 'rxjs/operators';
-import {MatDialog, MatDialogRef} from '@angular/material/dialog';
+import {MatDialog} from '@angular/material/dialog';
 import { ConfirmComponent } from '../confirm/confirm.component';
 
 @Component({

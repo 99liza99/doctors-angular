@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { ModalComponent } from '../modal/modal.component';
 import { Doctor } from '../doctors';
-import { SPECIALIZAIONS } from '../doctors.const';
 import { first, filter, tap } from 'rxjs/operators';
 import { DoctorService } from '../doctor.service';
 import { Observable } from 'rxjs';
@@ -57,7 +56,7 @@ export class DoctorComponent {
       });
   }
   deleteItem(_id: String) {
-    this.doctorService.deleteDoctor(_id).subscribe()
+    this.doctorService.deleteDoctor(_id).subscribe();
   }
 
   openDialog(
@@ -82,13 +81,16 @@ export class DoctorComponent {
       });
   }
   showMoreDoctors() {
-
-    this.doctors$.pipe(tap((v) => {
-      this.listLength = v.length;
-      if (this.listLength > this.end){
-        this.hideButtonNext = false;
-      }
-    })).subscribe();
+    this.doctors$
+      .pipe(
+        tap((v) => {
+          this.listLength = v.length;
+          if (this.listLength > this.end) {
+            this.hideButtonNext = false;
+          }
+        })
+      )
+      .subscribe();
 
     this.end += this.page;
 
@@ -97,5 +99,3 @@ export class DoctorComponent {
     }
   }
 }
-
-
