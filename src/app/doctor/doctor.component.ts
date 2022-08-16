@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { ModalComponent } from '../modal/modal.component';
 import { Doctor } from '../doctors';
+
 import { first, filter, tap } from 'rxjs/operators';
 import { DoctorService } from '../doctor.service';
 import { Observable } from 'rxjs';
@@ -42,6 +43,7 @@ export class DoctorComponent {
       width: '250px',
       enterAnimationDuration,
       exitAnimationDuration,
+      data: {title: "Doctor", name: "okay"}
     });
     dialogRef
       .afterClosed()
@@ -62,8 +64,9 @@ export class DoctorComponent {
   openDialog(
     enterAnimationDuration: string,
     exitAnimationDuration: string,
-    doctor: Doctor | undefined = undefined
+    doctor?: Doctor,
   ): void {
+    console.log(doctor)
     const dialogRef = this.dialog.open(ModalComponent, {
       width: '400px',
       enterAnimationDuration,

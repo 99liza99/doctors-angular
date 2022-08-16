@@ -19,7 +19,7 @@ export class ModalComponent {
   constructor(
     public dialogRef: MatDialogRef<ModalComponent>,
     public dialog: MatDialog, 
-    @Inject(MAT_DIALOG_DATA) public  data: Doctor | undefined ,
+    @Inject(MAT_DIALOG_DATA) public  currentDoctor: Doctor | undefined ,
   ) {}
 
 

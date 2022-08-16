@@ -32,6 +32,7 @@ export class TableComponent implements OnInit {
       width: '250px',
       enterAnimationDuration,
       exitAnimationDuration,
+      data: {title: "Appoitment", name: "duck"}
     });
     dialogRef
       .afterClosed()
