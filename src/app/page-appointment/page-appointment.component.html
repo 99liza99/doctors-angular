@@ -10,7 +10,9 @@
           matInput
           formControlName="name"
         />
-        <mat-error *ngIf="doctorForm.invalid">Name is not valid</mat-error>
+        <mat-error *ngIf="doctorForm.invalid"
+          >Name must be capitalized</mat-error
+        >
       </mat-form-field>
     </p>
 
@@ -22,6 +24,7 @@
             {{ doctor.name }}
           </mat-option>
         </mat-select>
+        <mat-error *ngIf="doctorForm.invalid">Please select doctor</mat-error>
       </mat-form-field>
     </p>
 
@@ -33,6 +36,7 @@
             {{ gender.name }}
           </mat-option>
         </mat-select>
+        <mat-error *ngIf="doctorForm.invalid">Gender is required</mat-error>
       </mat-form-field>
     </p>
 
@@ -40,7 +44,7 @@
       <mat-form-field appearance="fill">
         <mat-label>Choose a date</mat-label>
         <input matInput [matDatepicker]="picker" formControlName="picker" />
-        <mat-error *ngIf="doctorForm.invalid">Date is not valid</mat-error>
+        <mat-error *ngIf="doctorForm.invalid">Date is required</mat-error>
         <mat-hint>MM/DD/YYYY</mat-hint>
         <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
         <mat-datepicker #picker></mat-datepicker>
@@ -59,7 +63,9 @@
           cols="30"
           rows="10"
         ></textarea>
-        <mat-error *ngIf="doctorForm.invalid">Comment is not valid</mat-error>
+        <mat-error *ngIf="doctorForm.invalid"
+          >Comment is  required</mat-error
+        >
       </mat-form-field>
     </p>
 

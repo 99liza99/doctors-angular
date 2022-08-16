@@ -8,7 +8,7 @@
   <mat-form-field class="example-full-width" appearance="fill">
     <mat-label>Name</mat-label>
     <input type="text" pattern="[a-zA-Z ]*" matInput formControlName="name" />
-    <mat-error *ngIf="doctorForm.invalid">Name is not valid</mat-error>
+    <mat-error *ngIf="doctorForm.invalid">Name must be capitalized</mat-error>
   </mat-form-field>
 
   <mat-form-field class="example-full-width" appearance="fill">
@@ -32,7 +32,7 @@
       cols="30"
       rows="10"
     ></textarea>
-    <mat-error *ngIf="doctorForm.invalid">Description is not valid</mat-error>
+    <mat-error *ngIf="doctorForm.invalid">Description is required</mat-error>
   </mat-form-field>
 
   <mat-form-field class="example-full-width" appearance="fill">
@@ -40,12 +40,12 @@
     <input
       id="age"
       type="number"
-      min="10"
+      min="18"
       matInput
       max="100"
       formControlName="age"
     />
-    <mat-error *ngIf="doctorForm.invalid">Age is not valid</mat-error>
+    <mat-error *ngIf="doctorForm.invalid">Age must be between 18 and 100 inclusive</mat-error>
   </mat-form-field>
   <mat-card-actions>
     <button mat-stroked-button color="warn" class="false">Close</button>
