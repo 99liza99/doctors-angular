@@ -4,7 +4,7 @@
     Add Doctor
   </button>
 </div>
-<input type="text" placeholder="Search" [(ngModel)]="searchText" />
+<input type="text" placeholder="Search doctor" [(ngModel)]="searchText" />
 
 <form class="example-form">
   <div class="cards">
@@ -13,9 +13,10 @@
       *ngFor="
         let doctor of doctors$
           | async
+          | filter: searchText
           | sort: '_id'
           | slice: show:end
-          | filter: searchText
+          
       "
     >
       <a
