@@ -1,10 +1,9 @@
+<input type="text" placeholder="Search doctor" [(ngModel)]="searchText" />
 <div class="container">
-  
   <button mat-stroked-button class="main" (click)="openDialog('0ms', '0ms')">
     Add Doctor
   </button>
 </div>
-<input type="text" placeholder="Search doctor" [(ngModel)]="searchText" />
 
 <form class="example-form">
   <div class="cards">
@@ -16,7 +15,6 @@
           | filter: searchText
           | sort: '_id'
           | slice: show:end
-          
       "
     >
       <a
@@ -58,13 +56,12 @@
     </mat-card>
   </div>
 </form>
-  <button
-    mat-stroked-button
-    class="main"
-    type="button"
-    [disabled]="hideButtonNext"
-    (click)="showMoreDoctors()"
-  >
-    Next doctors
-  </button>
-
+<button
+  mat-stroked-button
+  class="main"
+  type="button"
+  [disabled]="hideButtonNext"
+  (click)="showMoreDoctors()"
+>
+  Next doctors
+</button>
