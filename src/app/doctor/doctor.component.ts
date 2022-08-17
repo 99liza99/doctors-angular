@@ -7,7 +7,6 @@ import { first, filter, tap } from 'rxjs/operators';
 import { DoctorService } from '../doctor.service';
 import { Observable } from 'rxjs';
 import { ConfirmComponent } from '../confirm/confirm.component';
-import { DOCTORS } from '../doctors.const';
 
 @Component({
   selector: 'app-doctor',
@@ -24,7 +23,7 @@ export class DoctorComponent {
   doctor: Doctor | undefined = undefined;
 // Search
   searchText = '';
-  doctors: Doctor[] = DOCTORS;
+  
 
   constructor(public dialog: MatDialog, private doctorService: DoctorService) {}
 

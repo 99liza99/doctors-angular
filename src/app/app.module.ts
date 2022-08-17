@@ -15,9 +15,7 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { TableComponent } from './table/table.component';
 import { ConfirmComponent } from './confirm/confirm.component';
 import { ArraySortPipe } from './pipes/sort.pipe';
-import { Ng2SearchPipeModule } from 'ng2-search-filter';
 import { FilterPipe } from './pipes/filter.pipe';
-
 
 @NgModule({
   declarations: [
@@ -30,7 +28,7 @@ import { FilterPipe } from './pipes/filter.pipe';
     TableComponent,
     ConfirmComponent,
     ArraySortPipe,
-    FilterPipe
+    FilterPipe,
   ],
   imports: [
     BrowserModule,
@@ -41,8 +39,7 @@ import { FilterPipe } from './pipes/filter.pipe';
     MatNativeDateModule,
     AppRoutingModule,
     HttpClientModule,
-    Ng2SearchPipeModule,
-      ],
+  ],
   providers: [ArraySortPipe, FilterPipe],
   bootstrap: [AppComponent],
 })
