@@ -14,7 +14,7 @@ import { CardDoctorComponent } from './card-doctor/card-doctor.component';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { TableComponent } from './table/table.component';
 import { ConfirmComponent } from './confirm/confirm.component';
-
+import { ArraySortPipe } from './pipes/sort.pipe';
 
 @NgModule({
   declarations: [
@@ -26,6 +26,7 @@ import { ConfirmComponent } from './confirm/confirm.component';
     CardDoctorComponent,
     TableComponent,
     ConfirmComponent,
+    ArraySortPipe
   ],
   imports: [
     BrowserModule,
@@ -36,8 +37,8 @@ import { ConfirmComponent } from './confirm/confirm.component';
     MatNativeDateModule,
     AppRoutingModule,
     HttpClientModule,
-  ],
-  providers: [],
+      ],
+  providers: [ArraySortPipe],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

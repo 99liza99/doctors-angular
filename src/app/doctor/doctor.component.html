@@ -6,7 +6,7 @@
 <div class="cards">
   <mat-card
     class="card"
-    *ngFor="let doctor of doctors$ | async | slice: show:end"
+    *ngFor="let doctor of doctors$ | async |sort:'_id' | slice: show:end "
   >
     <a [routerLink]="['/appointment']" [queryParams]="{ doctorId: doctor._id }"
       ><mat-card-title-group>
