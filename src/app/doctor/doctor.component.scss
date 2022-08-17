@@ -49,10 +49,18 @@
   display: flex;
   justify-content: space-between;
 }
-
-input {
-  padding: 2px;
-  margin: 20px;
-  border-radius: 25px;
-  color: black;
+.search {
+  width: 100%;
+  text-align: center;
+  margin: 10px 0;
+  input {
+    border: none;
+    border-bottom: 1px solid;
+    font-size: 18px;
+    padding: 5px;
+    min-width: 600px;
+    &:focus-visible{
+      outline: none;
+    }
+  }
 }
