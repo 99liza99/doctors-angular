@@ -1,56 +1,69 @@
 <div class="container">
+  
   <button mat-stroked-button class="main" (click)="openDialog('0ms', '0ms')">
     Add Doctor
   </button>
 </div>
-<div class="cards">
-  <mat-card
-    class="card"
-    *ngFor="let doctor of doctors$ | async |sort:'_id' | slice: show:end "
-  >
-    <a [routerLink]="['/appointment']" [queryParams]="{ doctorId: doctor._id }"
-      ><mat-card-title-group>
-        <mat-card-title>{{ doctor.name }}</mat-card-title>
-        <mat-card-subtitle>{{ doctor.specialization }}</mat-card-subtitle>
-        <img mat-card-sm-image [src]="doctor.img" />
-      </mat-card-title-group>
-      <mat-card-content>
-        <p>
-          {{ doctor.description }}
-        </p>
-      </mat-card-content>
-      <mat-card-content>
-        <p>{{ doctor.age }} <span>&nbsp; y. o.</span></p>
-      </mat-card-content>
-    </a>
-    <mat-card-actions>
-      <button
-        class="false"
-        mat-stroked-button
-        color="warn"
-        title="Delete"
-        (click)="openConfirm('0ms', '0ms', doctor._id)"
-      >
-        <span>Delete</span>
-      </button>
-      <button
-        class="true"
-        mat-stroked-button
-        title="Edit"
-        (click)="openDialog('0ms', '0ms', doctor)"
-      >
-      <span>Update</span>  
-      </button>
-    </mat-card-actions>
-  </mat-card>
-</div>
+<input type="text" placeholder="Search" [(ngModel)]="searchText" />
 
-<button
-  mat-stroked-button
-  class="main"
-  type="button"
-  [disabled]="hideButtonNext"
-  (click)="showMoreDoctors()"
->
-  Next doctors
-</button>
+<form class="example-form">
+  <div class="cards">
+    <mat-card
+      class="card"
+      *ngFor="
+        let doctor of doctors$
+          | async
+          | sort: '_id'
+          | slice: show:end
+          | filter: searchText
+      "
+    >
+      <a
+        [routerLink]="['/appointment']"
+        [queryParams]="{ doctorId: doctor._id }"
+        ><mat-card-title-group>
+          <mat-card-title>{{ doctor.name }}</mat-card-title>
+          <mat-card-subtitle>{{ doctor.specialization }}</mat-card-subtitle>
+          <img mat-card-sm-image [src]="doctor.img" />
+        </mat-card-title-group>
+        <mat-card-content>
+          <p>
+            {{ doctor.description }}
+          </p>
+        </mat-card-content>
+        <mat-card-content>
+          <p>{{ doctor.age }} <span>&nbsp; y. o.</span></p>
+        </mat-card-content>
+      </a>
+      <mat-card-actions>
+        <button
+          class="false"
+          mat-stroked-button
+          color="warn"
+          title="Delete"
+          (click)="openConfirm('0ms', '0ms', doctor._id)"
+        >
+          <span>Delete</span>
+        </button>
+        <button
+          class="true"
+          mat-stroked-button
+          title="Edit"
+          (click)="openDialog('0ms', '0ms', doctor)"
+        >
+          <span>Update</span>
+        </button>
+      </mat-card-actions>
+    </mat-card>
+  </div>
+</form>
+  <button
+    mat-stroked-button
+    class="main"
+    type="button"
+    [disabled]="hideButtonNext"
+    (click)="showMoreDoctors()"
+  >
+    Next doctors
+  </button>
+
