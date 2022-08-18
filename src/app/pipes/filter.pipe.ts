@@ -9,7 +9,12 @@ export class FilterPipe implements PipeTransform {
     if (!args || !items) return items;
 
     return items.filter((str) => {
-      return str.name.toLowerCase().includes(args.toLowerCase());
+      return str.name.toLowerCase().includes(args.toLowerCase())
+      || str.description.toLocaleLowerCase().includes(args.toLocaleLowerCase())
+      || str.specialization.toLocaleLowerCase().includes(args.toLocaleLowerCase())
+      || str.age === Number.parseInt(args)
     });
   }
 }
+
+ 
